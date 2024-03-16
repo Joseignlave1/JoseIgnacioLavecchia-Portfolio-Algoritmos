@@ -1,0 +1,503 @@
+Resumen hecho para el primer irat: Nota 40,77.
+
+Realicé un resumen para el primer irat del semestre, Siento que no me fue muy bien debido a que no tuve mucho tiempo para estudiar, y también siento que no me tomé el tiempo adecuado para procesar las respuestas
+
+
+Resumen:
+
+Punto 1:
+
+Resumen de Java
+Origen:
+
+Creado en 1991 por Sun Microsystems para electrodomésticos.
+Se introdujo como lenguaje de programación para computadores en 1995.
+
+Características principales:
+
+Orientado a objetos: Facilita la creación de aplicaciones modulares y reutilizables.
+Independiente de la plataforma: Se ejecuta en cualquier sistema operativo con una JVM.
+Portable: Se puede ejecutar en diferentes plataformas sin modificaciones.
+Robusto: Minimiza los errores y fallos en tiempo de ejecución.
+Seguro: Protege los datos y el sistema de accesos no autorizados.
+De alto rendimiento: Optimizado para un alto rendimiento.
+Multitarea: Permite ejecutar varias tareas al mismo tiempo.
+Dinámico: Permite la creación de objetos y clases en tiempo de ejecución.
+
+Ventajas:
+
+Fácil de aprender: La sintaxis es relativamente sencilla y similar a C++.
+Potente: Permite crear aplicaciones complejas y robustas.
+Versátil: Se puede utilizar para una amplia variedad de aplicaciones.
+Ampliamente utilizado: Millones de aplicaciones en todo el mundo lo utilizan.
+Comunidad activa: Gran cantidad de recursos disponibles y una comunidad de desarrolladores muy activa.
+
+Desventajas:
+
+Curva de aprendizaje: Puede ser complejo para principiantes.
+Consumo de memoria: Puede consumir más memoria que otros lenguajes.
+Velocidad: Puede ser más lento que otros lenguajes en algunos casos.
+
+Aplicaciones:
+
+Aplicaciones web: Servlets, JSPs, applets.
+Aplicaciones de escritorio: Aplicaciones independientes.
+Aplicaciones móviles: Android.
+Aplicaciones empresariales: J2EE.
+Juegos: Java3D.
+
+
+Java(tm) Development Kit (JDK). Se trata de un
+conjunto de programas y librerías que permiten desarrollar, compilar y ejecutar programas en Java.
+
+
+Debugger:
+Tiene la posibilidad de ejecutar parcialmente el programa, deteniendo la ejecución en el
+punto deseado y estudiando en cada momento el valor de cada una de las variables.
+
+
+
+JRE: versión reducida del JDK destinada únicamente a ejecutar código Java (no permite compilar).
+
+IDE: Entorno de desarollo integrado: Permiten en un mismo programa compilar y ejecutar el código de java sin tener que cambiar de aplicación.
+
+COMPILADOR DE JAVA(java.exe)
+
+¿Qué es?
+
+Una herramienta del JDK que analiza y compila código Java.
+
+¿Qué hace?
+
+Analiza la sintaxis del código Java (*.java).
+Genera ficheros compilados (*.class) si no hay errores.
+Muestra las líneas con errores.
+
+Nombre en el JDK de Sun:
+
+javac.exe
+
+Java Virtual Machine (JVM):Código neutro que está preparado para ser ejecutado sobre una máquina hipotética o virtual, interpreta este código neutro convirtiéndolo a código particular de la CPU o chip utilizada. Evita tener que realizar un programa diferente para cada CPU o plataforma.
+
+Es el interprete de java, ejecuta los "bytecodes"(ficheros compilados con extensión *.class)
+creados por el compilador de java(java.exe)
+
+VARIABLES PATH  y CLASSPATH: 
+
+Para compilar y ejecutar aplicaciones Java:
+
+Las herramientas javac.exe y java.exe deben estar accesibles.
+
+El directorio donde se encuentran debe estar en la variable de entorno PATH.
+
+
+Variable CLASSPATH:
+
+Determina dónde buscar las clases y librerías de Java.
+No es necesario a partir de JDK 1.1.4, salvo para clases de usuario adicionales.
+
+Puede incluir rutas de directorios o archivos .zip o .jar con archivos .class.
+
+Los archivos .zip no deben estar comprimidos.
+
+La herramienta jar.exe crea archivos .jar a partir de archivos .class comprimidos.
+
+Ventajas de los archivos .jar:
+
+Son comprimidos, ocupando menos espacio que los .class por separado o que un fichero .zip equivalente
+
+Facilitan la organización y distribución de clases.
+
+// = Comentario
+
+import = importan clases de los packages de java(librerías,etc)
+
+Ejemplo:
+
+import java.util.Vector;
+
+Ahora puedo acceder a la clase del package de vectores como Vector
+
+Vector vector1 = new Vector(Parámetros del vector);
+
+Packages:
+-agrupación de clases que tienen una finalidad relacionada
+-Jerarquía marcada por el . ejemplo java.util.vector
+-Se nombran con minúscula
+
+Clases predefinidas en java:
+-Empiezan con mayúscula, ejemplo Vector, ArrayList, LinkedList, etc
+
+* = indica que se importan todas las clases del package
+
+En java no se puede definir una variable o una función que no pertenezca a una clase.
+
+Clase:
+
+-agrupación de variables miembro (datos), y funciones miembro (métodos)  que operan sobre
+dichos datos y permiten comunicarse con otras clases.
+
+-Tipos de variables o datos creados por el usuario.
+
+
+Objeto(a veces llamado instancia) = es una variable concreta de una clase, con su propia copia de variables miembro.
+
+Main = programa principal de la aplicación.
+
+static= indica que es un método de clase(stático) se puede usar sin crear una instancia de una clase.
+
+void = no retorna nada.
+
+() = parámetros del método(el valor que le pasas)
+
+vector = array, técnicamente son diferentes pero a efectos prácticos son iguales.
+
+bloque = conjunto de sentencias adentro de llaves {}
+
+System.out.println(); = imprime valores por pantalla
+
+out = variable static de la clase System
+
+
+Ejemplo:
+
+Circulo c; // creo una referencia llamada c a objeto de clase círculo
+
+c = new Circulo(2.0, 2.0, 4.0); // creo el objeto c
+
++ = concatena
+
+Argumento implícito = objeto del cuál se quiere ejecutar el método
+
+Argumento explícito = objeto que le pasamos por parámetro.
+
+Ejemplo
+
+String nombre = "jose";
+
+String apellido = "lavecchia";
+
+nombre.equals(apellido)
+
+nombre = implícito
+
+apellido = explícito
+
+
+La clase base en java es siempre la clase Object
+
+public = una clase public puede ser accedida por cualquier otra clase.
+
+abstract = una clase abstract NO permite a NADIE crear objetos de esa clase, un Método abstract NO tiene implementación, solo su firma.
+
+
+extends = establece HERENCIA
+
+Ejemplo:
+
+
+
+public class Animal {
+    public void hacerSonido() {
+        System.out.println("Haciendo algún sonido");
+    }
+}
+
+public class Perro extends Animal {
+    public void hacerSonido() {
+        System.out.println("Guau guau");
+    }
+}
+
+
+perro HEREDA de animal, me doy cuenta por la palabra clave EXTEND
+
+protected = indica que solo pueden acceder a el método su clase, las clases que deriven de ella y las clases del propio package, una clase NO puede ser protected.
+
+Cuándo no se especifica el nivel de protección de un método o variable, por defecto es package.
+
+Esto significa que la variable o método puede ser utilizada SOLO por las clases del package.
+
+
+Applet: Aplicación especial que se ejecuta dentro de un navegador o browser
+
+Serverlet: Aplicación sin interfaz gráfica que se ejecuta en un servidor de internet
+
+
+Java es sensible a las letras mayúsculas y minúsculas, ejemplo masa , Masa y MASA son variables completamente diferentes.
+
+NOMENCLATURA JAVA:
+
+variables: se usan con minúscula, si tiene más de dos palabras pongo la segunda empieza con mayúscula, ejemplo elMayor, contaNums, etc
+
+Nombres de clases e interfaces SIEMPRE CON MAYÚSCULA.
+
+nombres de métodos, variables miembro y variables locales de los métodos, siempre con minúscula.
+
+Variables miembro: Variables declaradas de una clase pero fuera de cualquier método.
+
+Variables Finales: SIEMPRE con mayúscula
+Ejemplo:
+public class Persona {
+    // Variables miembro
+    private String nombre;
+    private int edad;
+    
+    // Constructor
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+    
+    // Métodos para acceder y modificar las variables miembro
+    public String getNombre() {
+        return nombre;
+    }
+
+nombre y edad son VARIABLES MIEMBRO
+
+
+Variables Finales(const como en js) son aquellas que una vez definidas y asignadas un valor, este valor no puede cambiar durante la ejecución del programa.
+
+Las defino con la palabra clave final.
+
+Ejemplo:
+public static final double VELOCIDAD_DE_LA_LUZ = 299792458.0;
+
+
+ficheros fuente = extensión *.java
+
+ficheros compilados = *.class
+
+una clase en java puede ser public o package(default)
+
+NO puede ser private o protected.
+
+
+en java NO se puede realizar herencia multiple, cada clase puede heredar solo de UNA clase.
+
+interfaz = no posee implementación SOLO firma de métodos, y si una clase implementa esa interfaz, debe implementar los métodos de la interfaz.
+
+package = agupación de clases(ejemplo: librerías)
+
+
+VARIABLES EN JAVA:
+
+variables de primitive types = int , byte, char, boolean
+
+Variables de referencia = nombre de estructuras más complejas ArrayList noDuplicates, LinkedList noDuplicates
+
+variable de referencia = noDuplicates
+
+
+Palabras RESERVADAS:
+
+abstract boolean break byte case catch
+char class const* continue default do
+double else extends final finally float
+for goto* if implements import instanceof
+int interface long native new null
+package private protected public return short
+static super switch synchronized this throw
+throws transient try void volatile while
+
+(*) son palabras reservadas, pero no se utilizan en la actual implementación del lenguaje Java
+
+Java dispone de ocho tipos primitivos de variables: un tipo para almacenar valores true y
+false (boolean); un tipo para almacenar caracteres (char), y 6 tipos para guardar valores numéricos, cuatro tipos para enteros (byte, short, int y long) y 
+dos para valores reales de punto flotante (float y
+double).
+
+new = se usa para crear un nuevo objeto
+
+se puede declara una variable adentro de un método con el nombre de una variable de variable miembro.
+
+pero para diferenciar y acceder a la variable miembro oculta, usamos this
+
+
+eliminar objetos = lo REALIZA automáticamente el garbage collector.
+
+BigInteger = variable especial, almacena cualquier número entero sin perder información.
+
+BigDecimal = almacena cualquier número decimal sin perder información.
+
+
+
+
+Operador Utilización Expresión equivalente
++= op1 += op2 op1 = op1 + op2
+-= op1 -= op2 op1 = op1 - op2
+*= op1 *= op2 op1 = op1 * op2
+/= op1 /= op2 op1 = op1 / op2
+%= op1 %= op2 op1 = op1 % op2
+
+
+instance of = operador instanceof permite saber si un objeto pertenece a una determinada clase o no
+
+++i =  En este caso primero se incrementa la
+variable y luego se utiliza (ya incrementada) en la expresión en la que aparece.
+
+i++ = En este caso primero se utiliza la variable en la
+expresión  y luego se incrementa.
+
+
+Operadores Relacionales:
+
+>
+>=
+<
+<=
+!=
+==
+
+Operadores lógicos:
+
+&& = AND
+
+|| = OR
+
+! = NOT
+
+&  = AND op1 & op2 true si op1 y op2 son true. Siempre se evalúa op2
+
+
+| = OR op1 | op2 true si op1 u op2 son true. Siempre se evalúa op2
+
+
+Operadores Que actúan a nivel de bits:
+
+Operador Utilización Resultado
+>> op1 >> op2 Desplaza los bits de op1 a la derecha una distancia op2
+<< op1 << op2 Desplaza los bits de op1 a la izquierda una distancia op2
+>>> op1 >>> op2 Desplaza los bits de op1 a la derecha una distancia op2 (positiva)
+& op1 & op2 Operador AND a nivel de bits
+| op1 | op2 Operador OR a nivel de bits
+^ op1 ^ op2 Operador XOR a nivel de bits
+~ ~op2 Operador complemento
+
+
+Operadores de asignación a nivel de bits:
+
+Operador Utilización Equivalente a
+&= op1 &= op2 op1 = op1 & op2
+|= op1 |= op2 op1 = op1 | op2
+^= op1 ^= op2 op1 = op1 ^ op2
+<<= op1 <<= op2 op1 = op1 << op2
+>>= op1 >>= op2 op1 = op1 >> op2
+>>>= op1 >>>= op2 op1 = op1 >>> op2
+
+Bifurcaciónes:
+
+switch and case
+
+alternativa a la bifurcación if else if else
+
+se usa cuándo se compara la misma expresión con distintos valores.
+
+
+switch (expression) {
+ case value1: statements1; break;
+ case value2: statements2; break;
+ case value3: statements3; break;
+ case value4: statements4; break;
+ case value5: statements5; break;
+ case value6: statements6; break;
+ [default: statements7;]
+}
+
+El default se utiliza para manejar los valores que no son comprendidos en los case
+
+cuándo se ejecuta la primera sentencia case, se ejecutan en cascada todas las anteriores hasta que se llega a un break,
+o hasta que termina el switch.
+
+Bucle do while
+
+do {
+ statements
+} while (booleanExpression);
+
+se traduciría en hacer esto mientras pase esto
+
+bifurcaciónes = if else, switch, case
+
+continue = se utiliza en bucles(for y while) no en bifurcaciónes(if, else, switch, case)
+
+continue = finaliza la iteracción actual y pasa a la siguiente iteracción del bucle.
+
+Ejemplo:
+
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        continue; // Salta a la siguiente iteración si i es igual a 5
+    }
+    System.out.println(i);
+}
+
+cuándo i == 5 salta a la siguiente iteracción o sea i = 6
+
+
+Etiquetas
+
+-Son utilizadas en bucles(for, while)
+-Proporcionan un punto de referencia al que se puede saltar dentro del código.
+
+Ejemplo:
+
+public class EjemploEtiquetas {
+    public static void main(String[] args) {
+        int[][] matriz = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        boolean encontrado = false;
+
+        // Etiqueta para el bucle exterior
+        busqueda:
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (matriz[i][j] == 5) {
+                    encontrado = true;
+                    // Utilizamos la etiqueta para salir de ambos bucles
+                    break busqueda;
+                }
+            }
+        }
+
+-Etiquetamos el bucle for con la etiqueta búsqueda
+-Si encontrado es = true salimos del bucle con la etiqueta busqueda mediante la sentencia break.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
