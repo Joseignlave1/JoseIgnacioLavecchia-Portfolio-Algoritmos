@@ -1,0 +1,51 @@
+REFLEXIÓN para fin de Unidad Temática
+Las siguientes son  algunas preguntas que pueden servirte como guía para tu reflexión personal sobre tus procesos de aprendizaje,  utilizando como medio los objetivos y actividades de esta Unidad Temática. 
+No es obligatorio que las contestes todas (son sólo una guía!!), e incluso puedes (y se recomienda que lo hagas) explorar otras inquietudes que no estén aquí representadas: lo importante es que, por unos minutos, te concentres en tus procesos de aprendizaje y medites sobre ellos, con el objetivo de procurar identificar acciones que te permitan mejorarlos.
+Recuerda referenciar todas las actividades que te han resultado beneficiosas, y en las carpetas correspondientes, poner las evidencias (trabajos extras, recursos adicionales consultados, ejercicios adicionales realizados y aprendizajes correspondientes obtenidos, etc.).
+Adicionalmente se sugiere analizar las “war stories” recomendadas como anécdotas para la Unidad Temática y reflexionar sobre las mismas (puedes agregar un documento de reflexión específico, y cualesquiera otros artefactos que sean convenientes).
+
+
+¿Cuáles son los resultados esperados del aprendizaje de esta Unidad Temática? (escribe lo que tú entiendas que son y significan)
+Resultados esperados: 
+1-Aprender a expresar en lenguaje natural una solución planteada, se refiere a mejorar nuestra capacidad de explicar en palabras simples, como va a funcionar nuestro algoritmo, creo que la idea detrás de esta explicación es qué cualquier persona sin conocimiento de programación pueda entender como funciona.
+2-Expresar nuestros algoritmos en  seudocódigo estándar:
+Se refiere a programar nuestro algoritmo en un lenguaje universal y sencillo, para así poder centrarnos en la pura lógica de nuestro algoritmo, y no en métodos específicos de un lenguaje en particular.
+
+3-Explicar los factores que indicen en el tiempo de ejecución de un algoritmo:
+Se refiere a poder identificar qué factores indicen en el tiempo de ejecución, por ejemplo un for anidado, el uso de una estructural adicional(ya sea ArrayList, LinkedList, otro)
+O cuántas veces recorremos una estructura para realizar una debida acción(eliminar, agregar, etc)
+
+4-Calcular el orden del tiempo de ejecución de algoritmos sencillos:
+Poder calcular el tiempo de ejecución de nuestros algoritmos, y de algoritmos dados, en base a analizar cada sentencia(siempre se recomienda de adentro hacia afuera) y poder realizar un cálculo entendiendo como se comporta el algoritmo.
+
+5-Indicar cuándo un algoritmo es más apropiado que otro:
+Poder identificar en base a los requerimientos dados, que solución sería la más óptima a implementar, teniendo en cuenta el tiempo de ejecución, y la acción que queremos realizar.
+
+6-Construir programas JAVA que implementen los TDAS, lista, pila y cola:
+Poder aprender y utilizar los  métodos de estos 3 TDAS, pudiendo así utilizarlos como forma de solución a algoritmos en JAVA.
+
+7-Comparar los costos de memoria de diferentes representaciones y elegir la más apropiada:
+No solo tener en cuenta el orden de ejecución de un algoritmo, sino también cuánto consume en memoria, en base a estos dos factores, poder realizar una elección correcta de qué algoritmo implementar.
+
+8-Reconocer y aplicar estándares de codificación en Java:
+Poder programar con estándares, tales como, definir las clases con mayúscula, las variables con camelCase(empieza con minúscula y después se utiliza mayúscula para separar palabras), etc
+
+9-Explicar las interfases e implementaciones de Listas provistas en la API de colecciones de Java:
+Poder explicar como se comportan los diferentes tipos de estructuras, List,ArrayList,LinkedList, etc
+
+¿He alcanzado esos resultados? Documenta la(s) evidencia(s), si corresponde.
+Sí, considero qué he alcanzado  estos resultados, he realizado trabajos prácticos en los cuáles implementamos TDAS, tanto en equipo como en solitario mediante los ejercicios domiciliarios.
+También he aprendido acerca de varios algoritmos por mi cuenta, como el que nos presentaron en clase “bubble sort”, sentí curiosidad acerca de como funcionaba y como podría plasmarlo en JAVA así que vi un video al respecto. 
+https://www.youtube.com/watch?v=g8qeaEd2jTc&t=315s&ab_channel=CodingwithJohn
+¿Qué he aprendido? ¿Por qué aprendí?
+Aprendí acerca de construir algoritmos con TDAS, y a su vez implementar esos TDAS  en un lenguaje de programación(JAVA), lo aprendí por dos motivos: Primero, porqué me interesa y me gustan bastante los algoritmos, y en segundo lugar para intentar obtener la aprobación en esta asignatura.
+¿Cómo he aprendido – o cómo no? ¿Sé qué tipo de aprendiz soy?
+He aprendido más que nada en la práctica, considero que soy un aprendiz muy visual, aunque leer libros y conceptos es una buena manera de tener un panorama general, considero que logro entender las cosas una vez las veo aplicadas y reflejadas en un algoritmo por ejemplo.
+¿Qué diferencia ha producido el aprendizaje en mi desarrollo intelectual, personal y ético?
+Considero qué me ha hecho mejorar bastante mi lógica de programación, adquiriendo una habilidad para mi desarrollo, tanto intelectual, como personal y ético.
+¿Es mi aprendizaje relevante, aplicable y práctico?
+Sí, considero que tanto mi aprendizaje como las clases en esta materia, son muy aplicables y prácticas.
+¿De qué maneras mi aprendizaje ha sido valioso?
+Mi aprendizaje ha sido valioso ya qué pude adquirir conocimientos prácticos que no solo me ayudaran en esta materia, sino que serán de gran utilizad en mi vida profesional.
+¿Qué diferencia ha hecho, para mi aprendizaje, la tutoría sobre el portafolios?
+Creo que la tutoría sobre el porfolio me ha hecho tener una visión más centrada y amplia sobre que cosas deben ir y cuáles no en el portfolio.
