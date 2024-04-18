@@ -1,0 +1,106 @@
+Resumen 3 IRAT:
+
+Recursión: -Cuándo un método se llama a sí mismo.
+           -Evaluar muy bien para los otros casos(distintos al caso base) y evitar su uso si existe una solución no recursiva aceptable.
+           
+ 
+
+Un Objeto es recursivo sí:
+
+-En parte está formado por sí mismo,  o
+-Está definido en función de sí mismo
+
+Ejemplo:
+
+Un número natural
+
+-0 Pertenece a N
+-Si n pertenece a N, entonces n+1 pertenece a N 
+
+
+
+-Si un módulo P contiene una referencia explícita a sí
+mismo, se dice que es DIRECTAMENTE RECURSIVO.
+
+-Si un módulo P contiene una referencia a un módulo Q que
+a su vez referencia a P, entonces se dice que P es
+INDIRECTAMENTE RECURSIVO-Técnica a evitar.
+
+
+Recursión LINEAL:
+
+1-Probar los casos base.
+–Comenzar probando un conjunto de casos base (debe
+haber por lo menos uno)-CASO BASE NO TIENE QUE TENER RECURSIVIDAD
+
+2-Recurrir una vez
+-Realizar una SOLA LLAMADA RECURSIVA.
+
+3-Definir cada posible llamada recursiva de forma tal que PROGRESE HACIA UN CASO BASE.
+
+
+Recursión de COLA:
+-Cuándo la llamada al objeto recursivo ocurre en la ÚLTIMA SENTENCIA.
+
+
+Recursión Binaria:
+
+-Cada vez que hay DOS LLAMADAS RECURSIVAS para cada caso NO-BASE
+
+
+ARBOLES:
+-Pueden definirse de dos maneras, de FORMA RECURSIVA, o NO-RECURSIVA.
+
+PROFUNDIDAD de un nódo de un árbol:
+-Longitud del camino que va desde la raíz hasta ese nodo.
+
+ÁLTURA de un nodo de un árbol:
+-Longitud del camino que va desde el nodo hasta la hoja más profunda
+
+
+ARBOL BINARIO:
+
+-Arbol en el que ningún nodo puede tener más de 2 hijos.
+
+TAMAÑO DE UN ÁRBOL:
+
+-tamaño del subArbol izquierdo + tamaño del subArbol derecho + 1(la raíz también cuenta como un nodo)
+
+
+ESTRUCTURA:
+-Se acomodan los números más chicos a la izquierda, y los mayores a la derecha.
+
+
+Recorrido PREORDEN:
+-Primero se procesa el nodo, y luego se procesan recursivamente sus hijos.
+
+Recorrido POSTORDEN:
+-Primero se procesan recursivamente ambos hijos(Izquierdo y Derecho) y después se procesa el propio nodo.
+
+Recorrido EN ORDEN:
+-Primero se procesa recursivamente el hijo izquierdo, luego se procesa recursivamente el nodo actual, y después se procesa recursivamente el hijo derecho.
+
+
+El tiempo de ejecución de cualquier recorrido es O(n) = líneal.
+
+
+
+Operaciónes:
+
+FindMin = encuentra el nodo más chico en el árbol binario, arrancamos desde la raíz y vamos recorriendo los nodos de la Izquierda, el último nodo es el más chico.
+FindMax = encuentra el nodo más grande en el árbol binario, arrancamos desde la raíz y vamos recorriendo los nodos de la Derecha, el último nodo es el más grande.
+
+las dos operaciónes tienen un tiempo de ejecución de O(n)
+
+
+ÁRBOL AVL:
+
+Profundidad = O(log N)
+
+Básicamente consiste en exigir que la altura de los subárboles izquierdos y derechos, pueda diferir como máximo en 1.
+
+
+La altura de un subárbol vacío = -1
+
+Para la inserción de elementos se utiliza un algoritmo recursivo
+
