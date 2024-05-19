@@ -1,0 +1,291 @@
+RESUMEN IRAT PARCIAL:
+
+
+Tiempo de ejecución de instrucciónes en dos bucles anidados = tiempo de ejecución de instrucciónes del bucle interno.
+
+
+Tiempo de ejecución de bucles consecutivos = tiempo de ejecución de bucle dominante.
+
+
+TDA LISTA:
+
+Operaciones:
+
+Insertar - O(n)
+
+  tlista.insertar(unElemento : tipoElemento)
+  COM
+   Si vacia entonces 
+     primero = unElemento
+   sino
+     actual = primero
+     mientras actual.siguiente <> nulo
+         actual = actual.siguiente
+     fin mientras
+     actual.siguiente = unElemento
+   fin si
+  FIN
+
+Eliminar - O(n)
+
+tlista.eliminar(unaClave : tipoclave) : boolean
+COM
+ Si lista.esVacia entonces
+    devolver false
+ sino
+  si primero.siguiente = nulo
+     si primero.etiqueta = unaClave
+        primero = nulo //Eliminamos al nodo
+        devolver true
+     fin si
+  fin si
+  actual = primero
+
+Si actual.etiqueta = clave entonces
+   aux1 = actual
+   aux2 = aux1.siguiente
+   primero = aux2
+   devolver true
+fin si
+
+mientras actual.siguiente <> nulo hacer
+  si actual.siguiente.etiqueta = unaClave
+     aux3 = actual.siguiente
+     devolver true
+  fin si
+  actual = actual.siguiente
+fin mientras
+devolver true
+
+FIN
+
+Buscar - O(n)
+  tlista.buscar(unaEtiqueta : tipoEtiqueta) : Telemento
+  COM
+    Si vacia entonces
+      devolver nulo
+    sino
+      actual = primero
+      mientras actual <> nulo
+        Si actual.etiqueta = unaetiqueta
+          devolver actual
+        fin si
+        actual = actual.siguiente
+      fin mientras
+      devolver nulo
+   fin si
+ FIN
+
+TDA PILA - TIPO DE LISTA, TODAS LAS OPERACIÓNES DE LISTA SON VÁLIDAS PARA LAS PILAS
+
+Operaciones:
+
+push: Agrega un elemento en la parte superior de la pila O(1)
+
+pop: elimina y devuelve el elemento que está en la parte superior de la pila O(1)
+
+peek: devuelve el elemento que están en la parte superior de la pila, sin eliminarlo O(1)
+
+isEmpty: verifica si la pila esta vacía O(1)
+
+-Anula(Vacía la pila)
+– Tope = "peek"
+– Saca – "pop"
+– Mete – "push"
+– Vacía "isEmpty"
+
+
+
+TDA COLA: TIPO DE LISTA, TODAS LAS OPERACIÓNES DE LISTA SON VÁLIDAS PARA LAS COLAS
+-Anula (vacía la cola)
+– Frente(devuelve el elemento q esta al frente de cola, no elimina) O(1)
+– PoneEnCola(agrega elemento a cola) O(1)
+– QuitaDeCola(elimina de cola) O(1)
+– Vacía(verifica si cola está vacía) O(1)
+
+
+
+RECURSIVIDAD:
+
+Si el método contiene una referencia a sí mismo está ESTRICTAMENTE RECURSIVO.
+
+Si un método1 contiene una referencia a otro método2 que a su vez referencia a método1, entonces está indirectamente recursivo.
+
+Recursión Lineal:
+
+-Tiene un caso base que no USA RECURSIVIDAD.
+
+-Realiza UNA SOLA llamada RECURSIVA.
+
+Recursión Binaria:
+
+-Hay 2 LLAMADAS RECURSIVAS, para cada caso NO-BASE
+
+Recursión de Cola:
+
+-Llamada RECURSIVA ocurre en la ULTIMA SENTENCIA.
+
+
+ÁRBOLES:
+
+Árbol Binario:
+
+Cada nodo interno tiene como MÁXIMO 2 HIJOS.
+
+Árbol binario de búsqueda:
+
+Para cada nodo ti, todas las claves del subárbol izquierdo de ti son menores que la clave de ti, y todas las claves del árbol derecho son mayores que la clave de ti.
+
+-Si árbol tiene N nodos y está balanceado, altura = log(n)
+
+Profundidad:
+
+-Longitud del camino que va desde la raíz hasta ese nodo.
+
+
+Altura:
+
+-Longitud del camino que va desde ese nodo hasta la hoja más profunda.
+
+
+Altura de un ÁRBOL:
+
+-Altura de su raíz
+
+
+Hoja:
+
+-Nodo que NO tiene hijos
+
+Hermanos:
+
+-Nodos que tienen el mismo padre.
+
+
+Ancestro:
+
+-Si existe un camino desde el nodo u hasta el nodo v, entonces u es un ancestro de v
+
+Descendiente:
+
+-Si existe un camino desde el nodo u hasta el nodo v, entonces v es un descendiente de u
+
+Ancestro propio:
+
+-Mismo concepto que ancestro, pero sin contar al propio Nodo.
+
+Descendiente Propio:
+
+-Mismo concepto que descendiente, pero si contar al propio Nodo.
+
+
+Tamaño de un Nodo:
+
+-Número de descendientes + el propio nodo.
+
+Tamaño de un ÁRBOL:
+
+-Tamaño de la raíz
+
+
+Recorridos:
+
+INORDEN = Hijo izquierdo, Raíz, hijo derecho
+
+PREORDEN = Raíz, Hijo izquierdo, Hijo derecho.
+
+POSTORDEN = Hijo izquierdo, Hijo derecho, Raíz
+
+
+Operaciones Árbol binario de búsqueda
+
+Insertar: O(log N) si está balanceado, O(n) si no está balanceado
+
+Insertar(UnElementoArbolBinario)
+    COM
+    SI Etiqueta = unElementoArbolBinario.Etiqueta ENTONCES
+        SALIR // ya está en el árbol
+    FINSI
+    SI unElementoArbolBinario.Etiqueta < Etiqueta ENTONCES
+        SI HijoIzquierdo = nulo ENTONCES
+            HijoIzquierdo 🡨 unElementoArbolBinario
+        SINO 
+            HijoIzquierdo.Insertar(unElementoArbolBinario)
+        FINSI
+    SINO
+        SI HijoDerecho = nulo ENTONCES
+            HijoDerecho 🡨 unElementoArbolBinario
+        SINO 
+            HijoDerecho.Insertar(unElementoArbolBinario)
+        FINSI
+    FINSI
+FIN
+
+
+Buscar: O(log N) si está balanceado, O(n) si no está balanceado
+
+Buscar(UnaEtiqueta) : TElementoABinario
+    RESULTADO = nulo
+    SI UnaEtiqueta = Etiqueta ENTONCES
+        RESULTADO = THIS
+    SINO
+        SI UnaEtiqueta < Etiqueta ENTONCES
+            SI HijoIzquierdo <> nulo ENTONCES
+                RESULTADO = HijoIzquierdo.Buscar(UnaEtiqueta)
+            FINSI
+        SINO
+            SI HijoDerecho <> nulo ENTONCES
+                RESULTADO = HijoDerecho.Buscar(UnaEtiqueta)
+            FINSI
+        FINSI
+    FINSI
+    RETORNAR RESULTADO
+FIN
+
+
+
+Eliminar: O(log N) si está balanceado, O(n) si no está balanceado
+
+ElementoAB.Eliminar(UnaEtiqueta): de Tipo TElementoAB
+    COM
+    (1) Si UnaEtiqueta < etiqueta entonces // si está, está en el subárbol izquierdo
+        Si hijoIzq <> nulo entonces
+            hijoIzq 🡨 hijoIzq.eliminar(UnaEtiqueta) // actualiza el hijo, con el mismo u otro valor
+        Finsi
+        retornar (this) // al padre le devuelve el mismo hijo
+    Finsi
+    (2) Si UnaEtiqueta > etiqueta entonces // si está, está en el subárbol derecho
+        Si hijoDer <> nulo entonces  
+            hijoDer 🡨 hijoDer.eliminar(UnaEtiqueta) // actualiza el hijo, con el mismo u otro valor
+        Finsi
+        retornar (this) // al padre le devuelve el mismo hijo
+    Finsi
+    (3) retornar quitaElNodo() // está, hay que eliminarlo
+    // al padre le devuelve el nuevo hijo
+Fin
+// Cuando encuentra el nodo a eliminar llama, por claridad, al método que hace el trabajo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
