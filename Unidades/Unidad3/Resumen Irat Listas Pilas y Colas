@@ -1,0 +1,398 @@
+Resumen IRAT LISTAS PILAS Y COLAS(Miércoles 20)
+
+Tiempo de ejecución = función de tamaño de entrada.
+
+
+Tiempos de ejecución
+O(n) = lineal
+O(1) = constante
+O(N log N)
+O(n^2) = cuadrática
+O(n^3) = cúbica
+
+Tiempos de ejecución:
+
+c = constante
+
+log N = logarítmica
+
+Log^2 N = Logarítmica al cuadrado
+
+N = Lineal
+
+N log N = N log N
+
+n^2 = cuadrática
+
+n^3 = Cúbica
+
+2^N = exponencial
+
+tamaño de la entrada de n = varía de 1 a 100 elementos.
+
+tiempos de ejecución = varían entre 0 y 10 microsegundos.
+
+
+Los algoritmos cuadráticos dejan de ser prácticos cuándo el tamaño de entrada supera unos pocos miles.
+
+Los algoritmos cúbicos dejan de ser prácticos cuándo el tamaño de entrada supera unos pocos centenares.
+
+
+
+Tiempo de ejecución de instrucciónes en dos bucles anidados = tiempo de ejecución de instrucciónes del bucle interno.
+
+
+Tiempo de ejecución de bucles consecutivos = tiempo de ejecución de bucle dominante.
+
+
+Logaritmo = exponente que indica la potencia a la que hay que elevar un número(la base) para obtener otro número dado.
+
+
+El rendimiento de un algoritmo O(N log N) es casi tan eficaz como O(n)
+
+
+k = N
+n = 4
+
+4 / 2 = 2
+
+
+
+Listas enlazadas(LinkedList)
+
+-Compuestas por nodos.
+
+-Cada nodo contiene una referencia al próximo nodo de la LinkedList
+
+-Cada nodo contiene usualmente una unidad de datos llamada carga
+
+
+Clase Node:
+
+public class Node {
+    int carga;
+    Node next;
+
+    public Node () {
+        carga = 0;
+        next = null;
+    }
+
+    public Node (int carga, Node next) {
+        this.carga = carga;
+        this.next = next;
+    }
+
+    public String toString () {
+        return carga + "";
+    }
+}
+
+}
+
+
+Main:
+
+//Creo Nodos(objetos del tipo Node)
+
+Node node1 = new Node (1, null);
+Node node2 = new Node (2, null);
+Node node3 = new Node (3, null);
+
+
+//Estos nodos todavía no están enlazados.
+
+//Para enlazarlos tengo que hacer tengo que hacer que la variable prox de cada nodo, haga referencia al siguiente nodo.
+//Al enlazarlos se crea la LinkedList
+
+node1.next = node2;
+node2.next = node3;
+node3.next = null;
+
+
+//node3.next = null; indicando así el final de la LinkedList.
+
+Si quiero pasar la LinkedList como parámetro a algún método, basta con pasar una referencia del primer nodo.
+
+Ejemplo:
+
+Método imprimir LinkedList
+
+public static void imprimirLista(Node lista) {
+    Node node = lista;
+    while (node != null) {
+        System.out.print(node);
+        node = node.next;
+    }
+    System.out.println();
+}
+
+//Para llamar a este método solo tengo que pasar una referencia al primer nodo.
+
+imprimirLista(node1);
+
+
+//Método imprimirlista con for
+
+public static void imprimirLista(Node lista) {
+        Node node = lista;
+        for(Node node = lista; node != null; node = node.next); {
+            System.out.print(node);
+        }
+        System.out.println();
+    }
+
+
+Por convención, las listas se imprimen entre paréntesis con comas entre
+los elementos, como en (1, 2, 3)
+
+
+ 
+//Método imprimirlista con una salida del formato (1, 2, 3)
+
+public static void imprimirLista(Node lista) {
+        Node node = lista;
+        while (node != null) {
+            System.out.print("(" + node + ")");
+            if(node.next != null) {
+                System.out.print(",");
+            }
+            node = node.next;
+        }
+        System.out.println();
+    }
+
+
+
+
+
+Método para imprimir una LinkedList al revez:
+
+public static void imprimirInverso(Nodo lista) {
+    if (lista == null) 
+        return;
+    
+    Nodo cabeza = lista;
+    Nodo cola = lista.next;
+    imprimirInverso(cola);
+    System.out.print(cabeza);
+}
+
+
+
+
+
+Tipo de dato abstracto(TAD)
+
+-Especifica un conjunto de operaciónes(o métodos) y su semántica(que es lo que hacen), pero no especifica su implementación, por eso son abstractos.
+
+-Proveen un lenguaje de alto nivel para especificar y hablar de algoritmos.
+
+
+Código cliente = código que utiliza el TAD
+
+Código proveedor = código que implementa al TAD.
+
+
+
+Stacks(pilas)
+
+Un stack es una colección = estructura de datos que contiene multiples elementos.
+
+Es una estructura(LIFO) = "Last in, first out" el último elemento que entra, es el primero que sale.
+
+Operaciones:
+
+Constructor = crea una nueva pila vacía
+
+push() = Agrega un nuevo elemento al final de la pila
+
+pop() = Quitar y devolver un ítem de la pila, el ítem devuelto es el último que fue agregado a la pila
+
+Empty = devuelte true o false si la pila está vacía
+
+
+Construir nueva pila =  Stack pila = new Stack ();
+
+Podemos agregar cualquier tipo de elementos a una Stack, sin embargo, en java solo podemos agregar objetos, NO primitive types.
+
+
+El método pop() devuelte un tipo object, ya que la Stack no sabe de qué tipo son los objetos que agregamos a la pila
+
+Object obj = pila.pop ();
+
+Para obtener el tipo del objeto que eliminé, tengo que saber de que tipo es ese objeto para castearlo
+
+Ejemplo si es un objeto de tipo Node
+
+Node nodo = (Node) obj;
+System.out.println (nodo);
+
+Si casteamos un objeto a su tipo incorrecto recibimos una excepción del tipo ClassCastException.
+
+
+Recorrer la Stack y ir eliminando los elementos(el último elemento que agregamos a la pila es el primero que eliminamos)
+
+while (!pila.isEmpty()) {
+    Node nodo = (Node) pila.pop();
+    System.out.print(nodo + " ");
+}
+
+
+
+Implementar los métodos de la pila:
+
+//El arreglo es la pila, y el índice lleva la cuénta de en qué posición está el siguiente espacio disponible en la pila
+
+public class Stack {
+    Object[] arreglo;
+    int indice;
+
+    public Stack() {
+        this.arreglo = new Object[128];
+        this.indice = 0;
+    }
+}
+
+//Método isEmpty();
+
+public boolean isEmpty() {
+    return indice == 0;
+}
+
+
+//Si el índice es igual a 0, entonces no hay elementos, y la pila está vacía.
+
+
+//Método push(agrega un elemento al comienzo de la pila)
+
+public void push(Object elem) {
+    arreglo[indice] = elem;
+    indice++;
+}
+
+Método pop(elimina el último elemento agregado, el que está al comienzo de la pila)
+
+public Object pop() {
+    indice--;
+    return arreglo[indice];
+}
+
+
+
+//Implementar un método para que la pila no tenga un tamaño arbitrario al crearla.
+//La idea es que cuándo el índice sea igual a la longitud de la pila, la duplicamos, asegurandonos que siempre va a haber espacio.
+
+Método push(agregar elementos al comienzo de la pila)
+
+public void push(Object item) {
+    if (lleno()) {
+        redimensionar();
+    }
+    arreglo[indice] = item;
+    indice++;
+}
+
+
+Método redimensionar(método que usamos para duplicar la pila en caso de que no haya espacio suficiente)
+
+private boolean lleno() {
+    return indice == arreglo.length;
+}
+
+
+private void redimensionar() {
+    Object[] nuevoArreglo = new Object[arreglo.length * 2];
+    for (int i = 0; i < arreglo.length; i++) {
+        nuevoArreglo[i] = arreglo[i];
+    }
+    arreglo = nuevoArreglo;
+}
+
+
+Ambos métodos son declarados private, lo que significa que solo pueden ser llamados desde esta clase.
+Esto es aceptable, ya que no hay razón para que el código cliente utilize estás funciones.
+Esto refuerza la barrera entre código proveedor y cliente.
+
+
+Precondición = Condiciónes que deben ser ciertas antes de ejecutar el método
+
+Postcondición = condición que debe ser cierta cuándo el método esté completo.
+
+
+Cola:
+
+Tipo de estructura (FIFO) primero que llega, primero que sale.
+
+como es un TAD, tengo que utilizar una LinkedList que se comporte como cola si quiero usarlo.
+
+Mantiene una referencia tanto al primero como al último nodo
+
+
+
+public class Cola {
+    public Nodo primero, ultimo;
+
+    public Cola () {
+        primero = null;
+        ultimo = null;
+    }
+
+    public boolean estaVacia() {
+        return primero == null;
+    }
+
+public void agregar(Object obj) {
+    Nodo nodo = new Nodo(obj, null);
+
+    if (ultimo != null) {
+        ultimo.next = nodo;
+    }
+
+    ultimo = nodo;
+
+    if (primero == null) {
+        primero = ultimo;
+    }
+ }
+  
+
+ public Object quitar() {
+    Nodo resultado = primero;
+    if (primero != null) {
+
+    //se elimina el primer elemento en entrar(el más antiguo) entonces el nuevo primer elemento(el nuevo más antiguo) pasa a ser el siguiente elemento
+        primero = primero.next;
+    }
+    if (primero == null) {
+        ultimo = null;
+    }
+    return resultado;
+}
+
+
+}
+
+TDAS POLÍTICOS = Tienen información simple pero dependiente de un comportamiento estructural
+
+TDAS MONOLÍTICOS = Tipos predefinidos, la información no es relacionada mediante ninguna estructura, y no se admiten más de un valor en cada momento.
+
+
+LinkedList vs ArrayList
+
+The principal benefit of a linked list over a conventional array is that the list elements can be easily inserted or removed without reallocation or reorganization of the entire structure because the data items do not need to be stored contiguously in memory or on disk
+
+Las LinkedList permiten,insertar y quitar elementos en un tiempo de O(n).
+
+Por otro lado las LinkedList no permiten acceder a los nodos por índice.
+
+
+Operación	                                     ArrayList	                              LinkedList
+Acceso Aleatorio (get)	                                O(1)	                                O(n)
+Inserción al Final	                                O(1) 	                                O(1)
+Eliminación al Final	                                O(1)	                                O(1)
+Inserción al Principio o en Posiciones Intermedias	O(n)	                                O(1)
+Eliminación al Principio o en Posiciones Intermedias	O(n)	                                O(1)
+
+
+
