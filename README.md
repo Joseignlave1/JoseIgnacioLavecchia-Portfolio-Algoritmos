@@ -1,6 +1,6 @@
 # Portfolio-José Ignacio Lavecchia-Algoritmos
 <div id = "header" align = "center">
-    <img src = https://media.giphy.com/media/Dh5q0sShxgp13DwrvG/giphy.gif width = "200" />
+    <img src = https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXRxc3gzeDNiMmZydjdqdjRrMGg4a2hwMXRva2Jyd3ZicmpleW84YyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDJ9IbxxvDUQM/giphy.gif width = "200" />
 </div>
 Portfolio de José Ignacio Lavecchia ❤️ de la materia Algoritmos en la Universidad Católica del Uruguay.
 Descripción:
