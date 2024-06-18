@@ -1,0 +1,12 @@
+Algoritmo de WARSHALL:
+
+
+1-Crear la matriz de adyacencia del grafo 
+
+2-Convertir esa matriz en una matriz binaria(uno si existe una arista(camino directo) 0 si NO existe.
+
+3-Realizamos una matriz por cada uno de los nodos del grafo.
+
+4-Hay que ir trabajando cada fila y columna, y ver donde hay una intersección de unos, poner un uno.
+
+
