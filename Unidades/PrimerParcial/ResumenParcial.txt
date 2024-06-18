@@ -1,0 +1,135 @@
+RESUMEN IRAT PARCIAL:
+
+
+Tiempo de ejecución de instrucciónes en dos bucles anidados = tiempo de ejecución de instrucciónes del bucle interno.
+
+
+Tiempo de ejecución de bucles consecutivos = tiempo de ejecución de bucle dominante.
+
+
+TDA LISTA:
+
+Operaciones:
+
+Insertar - O(n)
+
+Eliminar
+
+Buscar
+
+
+TDA PILA:
+
+Operaciones:
+
+
+TDA COLA:
+
+
+RECURSIVIDAD:
+
+Si el método contiene una referencia a sí mismo está ESTRICTAMENTE RECURSIVO.
+
+Si un método1 contiene una referencia a otro método2 que a su vez referencia a método1, entonces está indirectamente recursivo.
+
+Recursión Lineal:
+
+-Tiene un caso base que no USA RECURSIVIDAD.
+
+-Realiza UNA SOLA llamada RECURSIVA.
+
+Recursión Binaria:
+
+-Hay 2 LLAMADAS RECURSIVAS, para cada caso NO-BASE
+
+Recursión de Cola:
+
+-Llamada RECURSIVA ocurre en la ULTIMA SENTENCIA.
+
+
+ÁRBOLES:
+
+Árbol Binario:
+
+Cada nodo interno tiene como MÁXIMO 2 HIJOS.
+
+Profundidad:
+
+-Longitud del camino que va desde la raíz hasta ese nodo.
+
+
+Altura:
+
+-Longitud del camino que va desde ese nodo hasta la hoja más profunda.
+
+
+Altura de un ÁRBOL:
+
+-Altura de su raíz
+
+
+Hoja:
+
+-Nodo que NO tiene hijos
+
+Hermanos:
+
+-Nodos que tienen el mismo padre.
+
+
+Ancestro:
+
+-Si existe un camino desde el nodo u hasta el nodo v, entonces u es un ancestro de v
+
+Descendiente:
+
+-Si existe un camino desde el nodo u hasta el nodo v, entonces v es un descendiente de u
+
+Ancestro propio:
+
+-Mismo concepto que ancestro, pero sin contar al propio Nodo.
+
+Descendiente Propio:
+
+-Mismo concepto que descendiente, pero si contar al propio Nodo.
+
+
+Tamaño de un Nodo:
+
+-Número de descendientes + el propio nodo.
+
+Tamaño de un ÁRBOL:
+
+-Tamaño de la raíz
+
+
+Recorridos:
+
+INORDEN = Hijo izquierdo, Raíz, hijo derecho
+
+PREORDEN = Raíz, Hijo izquierdo, Hijo derecho.
+
+POSTORDEN = Hijo izquierdo, Hijo derecho, Raíz
+
+
+Operaciones:
+
+Insertar
+
+Buscar
+
+Eliminar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
