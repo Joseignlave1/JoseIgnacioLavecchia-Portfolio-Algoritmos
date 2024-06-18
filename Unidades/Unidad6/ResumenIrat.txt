@@ -1,0 +1,257 @@
+Mapa:
+
+Almacena pares clave-valor(k,v)
+
+-CLAVE ÚNICA
+
+
+TDA MAPA:
+
+• Almacena una colección de objetos en la
+forma clave-valor
+– tamaño()
+– estaVacio()
+– recuperar(k)
+– poner(k,v)
+– eliminar(k)
+– claves()
+– valores()
+– elementos()
+
+
+Diccionarios:
+
+-Como los mapas, también almacenan pares clave-valor
+
+-El diccionario permite 
+
+-MULTIPLES VALORES CON LA MISMA CLAVE
+
+Claves de tipo
+
+-Ordenados
+
+-desordenados
+
+TDA DICCIONARIO:
+
+• tamaño()
+• estaVacio()
+• buscar(k) = dado una clave k, retorna un puntero al/los elementos en el diccionario cuya clave sean k, si existen 
+• buscarTodos(k)
+• insertar(k,v) = k, clave del elemento, y, valor del elemento
+• eliminar(e) = clave del elemento a eliminar
+• elementos()
+– Cada elemento tiene getKey y getValue
+
+Algunos diccionarios soportan otras operaciones útiles:
+
+Max(D) o Min(D) -Devuelve el item con el mayor o menor clave en D(diccionario)
+
+Predecessor(D, k) Successor(D,k) -Devuelve un item de D(diccionario) cuya clave está inmediatamente antes(o después) de k en orden
+
+Operaciones de diccionario para Arrays ordenados y desordenados
+ 
+
+Operaciones de diccionario para LinkedList y DoubleLinkedList, ordenadas y desordenadas:
+ 
+
+
+
+
+
+Colecciones:
+
+-Objeto que agrupa múltiples elementos
+en una sóla unidad.
+
+-Se utilizan para almacenar, recuperar, manipular y comunicar los datos agregados.
+
+Framework de Colecciones:
+
+– Interfases
+– Implementaciones
+– algoritmos
+
+
+¿Cuál de los siguientes no es un
+beneficio de usar la librería de
+colecciones?
+a) Reducir el esfuerzo de programación
+b) Incrementar la velocidad y calidad del
+programa
+c) Reducir el esfuerzo para aprender y usar
+nuevas APIs (muchas usan las colecciones
+como entrada y / o salida)
+d) Promover la reutilización del software
+e) Ahorrar en el desarrollo de casos de prueba
+
+
+RESPUESTA: 
+
+B
+
+
+API Colecciones –
+implementaciones(parcial)
+• Set
+
+– HashSet
+– TreeSet
+– LinkedHashSet
+
+• List
+
+– ArrayList
+– LinkedList
+
+• Map
+
+– HashMap
+– TreeMap
+– LinkedHashMap
+
+API Colecciones - Interfaz “Collection”
+• int size(),
+• boolean isEmpty(),
+• boolean contains(Object element),
+• boolean add(E element),
+• boolean remove(Object element),
+• Iterator<E> iterator().
+• Recorridos:
+– for-each
+– Iterador
+– Operaciones agregadas
+• “bulk operations”
+• Array operations
+
+
+
+API Colecciones - Interfaz “Set”
+
+-COLECCION QUE NO PUEDE TENER DUPLICADOS
+
+-Modela la abstracción matemática "conjunto"
+
+-Solo contiene métodos heredados de Collection.
+
+Implementaciónes:
+
+– HashSet
+– TreeSet
+– LinkedHashSet
+
+API Colecciones -Interfaz "List"
+
+-Es una colección ordenada(secuencia)
+
+-PUEDE TENER DUPLICADOS
+
+Operaciones adicionales a las de API Collection:
+
+-Acceso por posición(get,set,add,addAll,remove)
+
+-Búsqueda(indexOf,lastIndexOf)
+
+– Iteración (extiende la semántica de Iterator, métodos de listIterator)
+
+Metodos de listIterator:
+1. hasNext
+2. next
+3. remove
+4. hasPrevious
+5. previous
+
+– Vista de subrango (método sublist)
+- subList(int fromIndex, int toIndex)
+Ejemplo:
+
+for (int i = fromIndex; i < toIndex; i++) { ... }
+
+-ELIMINA LA NECESIDAD DE OPERACIONES DE SUBRANGOS EXPLÍCITAS:
+Ejemplo: 
+
+list.subList(fromIndex, toIndex).clear();
+
+Implementaciones:
+
+-ArrayList
+-LinkedList
+
+
+Algoritmos de listas:
+
+– sort — ¿cómo funciona? ¿es “estable”?
+– shuffle — ¿qué hace?
+– reverse.
+– rotate — ¿qué hace?
+– swap —.
+– replaceAll
+– fill
+– copy.
+– binarySearch
+– indexOfSubList
+– lastIndexOfSubList
+
+
+API Colecciones- Interfaz "Map"
+
+-Un Map mapea claves a valores
+
+-Cada clave puede mapear COMO MÁXIMO A UN VALOR
+
+Operaciones básicas:
+
+– put
+– get
+– remove
+– containsKey
+– containsValue
+– size
+– empty
+
+Operaciones “ bulk”
+– putAll
+– Clear
+
+Vistas(collection views)
+Los métodos de vistas de Collection permiten que un Map sea visto como una Collection de tres formas:
+
+– keySet, entrySet, values
+
+proveen la UNICA FORMA DE ITERAR SOBRE UN MAP:
+
+for (KeyType key : m.keySet())
+System.out.println(key);
+
+y con un iterador:
+
+for (Iterator<Type> it = m.keySet().iterator(); it.hasNext(); )
+
+if (it.next().isBogus()) it.remove();
+
+
+
+Implementaciónes:
+
+-HashMap(Get,Put,ContainsKey,remove) O(1) -Orden de iteracción Random
+
+-TreeMap(Get,Put,ContainsKey,remove) O(1) -Ordenado de acuerdo al orden de inserción, o al orden de acceso
+
+-LinkedHashMap (Get,Put,ContainsKey,remove) O(log N) -Ordenado de acuerdo al orden natural de las claves, o al comparador(se especifica mientras se construye)
+
+
+HASHCODE Y EQUALS:
+
+Cada vez que se invoque en el mismo objeto más de una vez, durante la ejecución de una aplicación Java, hashCode() debe devolver el mismo entero, siempre que no se modifique la información utilizada en las comparaciones de igualdad en el objeto.
+
+-Este entero no necesita permanecer consistente, entre dos ejecuciones de la misma aplicación o programa.
+
+-Si dos objetos son iguales de acuerdo con el método equals(), entonces llamar a hashCode() en cada uno de los dos objetos, debe producir el mismo resultado entero.
+
+-No se requiere que si DOS OBJETOS SON DESIGUALES DE ACUERDO CON EQUALS, SI LLAMAS A hashCode() PRODUZCAN RESULTADOS ENTEROS DISTINTOS en cada uno de los objetos.
+
+HASHING:
+ 
+
+Hashing:
