@@ -1,0 +1,14 @@
+UNIDAD TEMÁTICA  # : Diccionarios,Mapas,Hashing
+REFLEXIÓN RÁPIDA “minute paper”
+(responde rápidamente, en pocos minutos)
+1.	¿Cuál es el concepto más importante que has aprendido o reforzado en esta Unidad Temática?
+
+El concepto más importante que he aprendido es el uso de la api de colecciónes de java, así como el concepto e implementación de los métodos de Hashing
+
+
+
+
+
+2.	¿Cuál es la pregunta más relevante que puedas tener y que creas que no ha sido correctamente respondida, analizada o revisada en esta Unidad Temática?
+
+     La pregunta más relevante que puedo se implementa la función Hash la cuál Java implementa para asignar un hashcode por defecto al momento de inicializar un tipo no Primitivo.
