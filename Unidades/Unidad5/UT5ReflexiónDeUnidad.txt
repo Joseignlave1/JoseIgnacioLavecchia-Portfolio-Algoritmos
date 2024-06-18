@@ -1,0 +1,27 @@
+REFLEXIÓN para fin de Unidad Temática
+Las siguientes son  algunas preguntas que pueden servirte como guía para tu reflexión personal sobre tus procesos de aprendizaje,  utilizando como medio los objetivos y actividades de esta Unidad Temática. 
+No es obligatorio que las contestes todas (son sólo una guía!!), e incluso puedes (y se recomienda que lo hagas) explorar otras inquietudes que no estén aquí representadas: lo importante es que, por unos minutos, te concentres en tus procesos de aprendizaje y medites sobre ellos, con el objetivo de procurar identificar acciones que te permitan mejorarlos.
+Recuerda referenciar todas las actividades que te han resultado beneficiosas, y en las carpetas correspondientes, poner las evidencias (trabajos extras, recursos adicionales consultados, ejercicios adicionales realizados y aprendizajes correspondientes obtenidos, etc.).
+Adicionalmente se sugiere analizar las “war stories” recomendadas como anécdotas para la Unidad Temática y reflexionar sobre las mismas (puedes agregar un documento de reflexión específico, y cualesquiera otros artefactos que sean convenientes).
+
+
+•	¿Cuáles son los resultados esperados del aprendizaje de esta Unidad Temática? (escribe lo que tú entiendas que son y significan)
+Respuesta:
+Los resultados esperados para esta unidad temática son saber cómo funciona un Trie, entender los pseudocódigos de sus operaciones, saber como funciona un Árbol genérico, entender los pseudocódigos de sus operaciones.
+•	¿He alcanzado esos resultados? Documenta la(s) evidencia(s), si corresponde.
+Considero que he alcanzado parcialmente los resultados, aunque entiendo cómo funciona un Trie y un árbol genérico, tengo que practicar más en entender sus operaciones, debo plasmar más esos conocimientos de forma práctica.
+•	¿Por qué aprendí?
+Respuesta:
+Lo aprendí para mi desarrollo profesional, para seguir creciendo en mi carrera.
+•	¿Cómo he aprendido – o cómo no? ¿Sé qué tipo de aprendiz soy?
+Lo he aprendido en base a videos, y lecturas, me considero un Aprendiz mas visual, por lo que a veces me cuesta un poco retener el conocimiento obtenido en libros.
+Recursos adicionales:
+https://www.youtube.com/watch?v=H9ObBBoGS9E&t=211s&ab_channel=KevinJesusGarc%C3%ADaR%C3%ADos
+https://www.youtube.com/watch?v=20NhZ1PeB2E&ab_channel=CarlosHenriquez
+
+•	¿Qué diferencia ha producido el aprendizaje en mi desarrollo intelectual, personal y ético?
+Respuesta:
+Creo que a producido una diferencia significativa en mi desarrollo intelectual, dándome más herramientas las cuáles van a ser muy útiles en mi futuro laboral, tanto en lo intelectual como en lo personal, y ético.
+•	¿Es mi aprendizaje relevante, aplicable y práctico?
+Respuesta: 
+Sí, considero que el aprendizaje obtenido tanto en esta unidad como en lo que va del curso, es muy relevante, práctico y sobre todo aplicable al mundo tanto académico como laboral.
