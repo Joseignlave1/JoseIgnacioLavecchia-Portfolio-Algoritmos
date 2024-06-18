@@ -1,0 +1,19 @@
+UNIDAD TEMÁTICA  #01: Transición a Java
+REFLEXIÓN RÁPIDA “minute paper”
+(responde rápidamente, en pocos minutos)
+1.	¿Cuál es el concepto más importante que has aprendido o reforzado en esta Unidad Temática?
+
+Me gustaría citar 2 conceptos, el primero el uso de Enums, un objeto que no utilizaba habitualmente y pude reforzar y aprender su uso mediante ejemplos prácticos.
+Segundo el uso de switch/case, reforcé su uso y pude continuar desarrollando la lógica acerca de en qué situaciones usarlo.
+
+
+
+
+
+
+
+2.	¿Cuál es la pregunta más relevante que puedas tener y que creas que no ha sido correctamente respondida, analizada o revisada en esta Unidad Temática?
+
+Creo que al ser una unidad de introducción a Java y personalmente habiendo utilizado Java anteriormente, no me quedó ninguna pregunta sin responder que no haya indagado y buscado la respuesta.
+
+ 
