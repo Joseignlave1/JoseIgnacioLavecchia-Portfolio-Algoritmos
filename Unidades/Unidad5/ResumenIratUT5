@@ -1,0 +1,161 @@
+text processing algorithms also highlight some important algorithmic design patterns. In particular, the pattern matching problem gives rise to the brute-force method, which is often inefficient but has wide applicability.
+
+dynamic programming design pattern, which can be applied in some special instances to solve a problem in polynomial time that appears at first to require exponential time to solve.
+
+Character strings can come from a wide variety of sources, including scientific, linguistic, and Internet applications. Indeed, the following are examples of such strings: P = "CGTAAACTGCTTTAATCAAACGC" 
+S = "http://java.datastructures.net".
+
+
+breaking large strings into smaller strings. 
+pieces that result from such operations, = substring
+substring of an m-character string  P to refer to a string of the form P[i]P[i + 1]P[i + 2] … P[j]
+
+some 0 ≤ i ≤ j ≤ m− 1 =  string formed by the characters in P from index i to index j, inclusive
+
+a string is actually a substring of itself taking i = 0 and j = m – 1
+substrings requires that either i > 0 or j − 1.
+
+P[i..j] Substring of P from index i to index j, inclusive.
+
+if i > j, then P[i..j] is equal to the null string,
+
+Prefix = para 0 ≤ j ≤ n−1  ,  cualquier substring que empiece con los mismos caracteres que el string original
+Ejemplo = “bcasbs”
+Prefix puede ser  “bc”
+Sufix para 0 ≤ j ≤ n−1 ,cualquier substring que termine con los mismos caracteres que  el string original.
+Sufix puede ser = “bs”
+
+Proper substring = se refiere a un substring que no es el string original completo, y que no sea substring triviales(vacías)
+
+String operations  come in two flavors: those that modify the string and those that simply return information about the string without  modifying it.
+
+String class to represent immutable strings, which cannot be modified, and the StringBuilder class to represent mutable strings, which can be modified.
+
+TRIE:
+tree-based data structure for storing strings in order to support fast pattern matching.
+main application for tries is in information retrieval.
+
+The primary query operations that tries support are pattern matching and prefix matching
+
+The latter operation involves being given a string X, and looking for all the strings in S that contain X as a prefix.
+
+Alfabeto σ, Σ = conjunto finito de símbolos o caracteres que se utilizan para formar cadenas.
+Por ejemplo en el caso del ADN el alfabeto Σ podría consistir en los cuatro elementos que lo componen: A,C,G,T
+
+Standard Tries:
+Let S be a set of s strings from alphabet σ such that no string in S is a prefix of another string.
+
+A standard trie for S is an ordered tree T with the following properties:
+
+PROPIEDADES:
+- Each node of T, except the root(raíz), is asociado with a character of σ.
+- el orden de los hijos de un nodo interno está determinado por un orden canónico del alfabeto σ.,  Σ (sigma), significa que los hijos se organizan de acuerdo con el orden natural de los símbolos en el alfabeto utilizado.
+
+- Si concatenamos las etiquetas de todos los nodos en el camino desde la raíz hasta un nodo externo, obtenemos la cadena asociada con ese nodo externo.
+Nodos externos: los nodos que no tienen hijos, las hojas del árbol.
+Ejemplo:
+si estamos trabajando con el alfabeto inglés
+
+Σ={a,b,c,...,z}, entonces los hijos de un nodo interno se organizarían en orden alfabético: primero los nodoscorrespondientes a la letra 'a', luego 'b', y así sucesivamente hasta 'z'.
+
+ 
+
+
+ Si hay solo dos caracteres en el conjunto sigma, entonces el trie es un Binary Tree, con algunos nodos internos probablemente teniendo un solo hijo.
+
+El trie guarda un conjunto de prefijos convirtiéndolos en nodos, y extendiendo ese prefijo mediante los hijos en función a medida que se va extendiendo el string.
+
+Si hay d caracteres en el alfabeto(sigma) entonces cada nodo interno del trie puede tener hasta d hijos, donde cada hijo está etiquetado con un carácter distinto del alfabeto.
+ 
+Cada nodo interno en T(trie) tiene como máximo d(cantidad de caracteres de sigma) hijos 
+
+-T tiene s(cantidad de strings en sigma) nodos externos(hojas, que no tienen hijos)
+-La altura de T(trie) es igual a la longitud del Substring mas largo el S
+-El número de nodos en T(trie) es O(n).
+
+El peor caso para el número de nodos de un Trie, ocurre cuando no hay dos strings en el conjunto sigma que compartan un mismo prefijo(no vacío)
+En este caso en el trie, excepto por la raíz, todos los nodos internos tienen un solo hijo.
+
+Para construir un trie estándar para un conjunto \( S \) de cadenas, podemos utilizar un algoritmo incremental que inserta las cadenas una por una. Aquí tienes los pasos para insertar una cadena \( X \) en el trie:
+
+1. Comenzamos en la raíz del trie \( T \).
+2. Intentamos seguir el camino asociado con la cadena \( X \) en \( T \).
+3. Dado que \( X \) aún no está en \( T \) y ninguna cadena en \( S \) es un prefijo de otra cadena, detendremos el seguimiento del camino en un nodo interno \( v \) de \( T \) antes de llegar al final de \( X \).
+4. Creamos una nueva cadena de descendientes de nodo de \( v \) para almacenar los caracteres restantes de \( X \).
+
+Por ejemplo, supongamos que queremos insertar la cadena "apple" en el trie actual:
+
+- Empezamos en la raíz del trie.
+- Comenzamos a seguir el camino asociado con "apple".
+- Supongamos que encontramos "app" en el trie, pero no "apple".
+- Detenemos el seguimiento del camino en el nodo "app".
+- Creamos nuevos nodos descendientes de "app" para los caracteres restantes "le".
+El tiempo para insertar una cadena X es O(dm) donde m es longitud de X y d es el tamaño del alfabeto(sigma)
+Por lo tanto para construir el trie completo para un conjunto S toma O(dn) tiempo, donde n es la longitud total de las cadenas de S y d es el tamaño del alfabeto(sigma)
+Este enfoque incremental garantiza que no se repitan nodos innecesarios y que el trie se construya de manera eficiente.
+
+
+COMPRESSED TRIE:
+
+Es similar a un Standart Trie, pero se asegura que cada nodo interno tenga al menos dos hijos.
+Esto se logra comprimiendo los strings de nodos, con un solo hijo en bordes individuales
+
+Preposiciónes:
+-Cada nodo interno de T tiene al menos dos hijos 
+-T tiene s nodos externos
+-El número de los nodos de T es O(s)
+
+Nodo redundante:
+
+Un nodo interno en un trie, se considera redundante si tiene un solo hijo, y no es la raíz del trie.
+
+Formados el trie comprimido, juntando los nodos internos del trie standard con su único hijo en un mismo nodo.
+
+Cadena redundante:
+
+secuencia de bordes consecutivos donde todos los nodos intermedios (excepto posiblemente el primero y el último) tienen solo un hijo.
+
+En resumen, esta parte destaca que la compresión de los caminos en un trie puede tener ventajas significativas cuando se utiliza como una estructura de índice auxiliar sobre una colección de cadenas ya almacenadas en una estructura primaria. Esto se debe a que, aunque la compresión de los caminos puede aumentar el tamaño de las etiquetas de los nodos, no es necesario almacenar todos los caracteres de las cadenas en la colección.
+
+
+ARBOL:
+Un Árbol tiene las siguientes propiedades:
+-Uno de los nodos se distingue de los demás, por ser la raíz.
+-Todo nodo c, excepto la raíz, está conectado mediante una arista a exactamente un único otro nodo p, el nodo p es el padre de c y c es uno de los hijos de p.
+-Existe un camino único que recorre el árbol desde la raíz hasta cada nodo.
+-El número de aristas que hay que recorrer se denomina longitud del camino.
+
+La raíz de un árbol no tiene padre.
+-Un árbol con N nodos debe tener N – 1 aristas.
+
+Profundidad:
+Longitud del camino que va desde la raíz hasta ese nodo.
+Altura:
+Longitud del camino que va desde el nodo hasta la hoja más profunda.
+
+Profundidad de raíz es siempre 0
+Profundidad de cualquier nodo = 1 mas que la profundidad de su padre
+Altura de cualquier nodo = 1 mas que la de su hijo de máxima altura.
+Altura de un árbol = altura de su raíz.
+
+Nodos del mismo padre = hermanos
+
+
+Ancestro:
+Un ancestro es un nodo que está en la ruta desde la raíz del árbol hasta otro nodo específico. En otras palabras, si puedes seguir un camino ascendente desde un nodo dado hacia la raíz del árbol y pasas por otros nodos en el camino, esos nodos son los ancestros de ese nodo dado.
+Y ese nodo dado es descendiente de esos otros nodos.
+
+ANCESTRO PROPIO:
+Un ancestro propio de un nodo en un árbol es un ancestro que no es el propio nodo en sí mismo. En otras palabras, es un nodo diferente al nodo dado que está en la ruta desde la raíz del árbol hasta el nodo dado.
+
+DESCENDIENTE PROPIO:
+Un descendiente propio de un nodo en un árbol es un descendiente que no es el propio nodo en sí mismo. En otras palabras, es un nodo diferente al nodo dado que está en la ruta desde la raíz del árbol hasta el nodo dado.
+
+Tamaño de un nodo:
+Número descendientes que tiene el nodo, incluyendo al propio nodo.
+
+Implementar clase árbol:
+Mantenemos los hijos de cada nodo en una ListaEnlazada de nodos del árbol, en la que cada nodo mantiene dos enlaces, uno a su hijo situado mas a la izquierda(si este nodo no es una hoja), y otro a su hermano situado a la derecha.(si es que se propio nodo no es ese hermano situado a la derecha.
+El primer enlace es el enlace firstChild, y el segundo es el enlace nextSibling.
+ 
+
