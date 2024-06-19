@@ -1,0 +1,38 @@
+procedure Dijkstra(con caminos)
+    Inicializar S, D, P
+    S = {1}
+    para i = 2 a n hacer
+        D[i] = C[1, i]  // Valor inicial, infinito si no hay camino directo
+    fin para
+
+    mientras V ≠ S hacer
+        // Elegir w perteneciente a V-S tal que D[w] sea mínimo
+        w = nodo en V-S con D[w] mínimo
+        agregar w a S
+
+        para cada v perteneciente a V-S hacer
+            si D[w] + costo(w, v) < D[v] entonces
+                D[v] = D[w] + costo(w, v)
+                P[v] = w
+            fin si
+        fin para cada
+    fin mientras
+fin procedure
+
+
+
+
+procedure ImprimirCaminos(Vector[] predecesores, VDestino) VDestino = E
+
+Vector[] caminoFinal = {}
+
+w = VDestino
+
+mientras w != null
+  caminoFinal.agregar(w)
+  w = w.obtenerPredecesor()
+fin Mientras
+
+caminoFinal.invertir()
+
+devolver caminoFinal
