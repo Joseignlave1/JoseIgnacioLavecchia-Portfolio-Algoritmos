@@ -1,0 +1,3 @@
+Metodos importantes
+
+map.removeIf() elimina claves o valores que cumplan con cierta condición
