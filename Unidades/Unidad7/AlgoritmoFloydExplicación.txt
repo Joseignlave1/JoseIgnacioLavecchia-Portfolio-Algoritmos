@@ -1,0 +1,33 @@
+Algoritmo de Floyd, recuperar el camino entre un par de vértices:
+
+
+Primero inicializamos la matriz de costos iniciales C:
+
+C = [
+    [0, ∞, 1, 4, ∞],
+    [6, 0, ∞, ∞, 3],
+    [∞, 2, 0, ∞, 1],
+    [∞, ∞, 5, 0, ∞],
+    [3, ∞, ∞, ∞, 0]
+]
+
+
+
+Matriz de distancias (A): 
+
+Inicialmente una copia de C, que se actualiza para contener las distancias mínimas entre cada par de vértices.
+
+
+Matriz de predecesores (P): Se usa para rastrear el camino más corto entre los vértices. Inicialmente, P[i][j] es i si hay una arista directa de i a j, o -1 si no la hay.
+
+
+CONCEPTO MATRIZ DE PREDECESORES:
+
+La matriz de predecesores P se inicializa de tal manera que P[i][j] sea el índice del predecesor de j en el camino más corto desde i. Si no hay un camino directo de i a j, P[i][j] se inicializa con -1.
+
+Concepto de la matriz de predecesores
+En la matriz de predecesores P, la entrada P[i][j] indica el predecesor de j en el camino más corto desde i.
+
+Si i == j: P[i][j] = i porque el predecesor de un vértice a sí mismo es él mismo.
+Si hay un camino directo de i a j (es decir, C[i][j] no es infinito): P[i][j] = i porque i es el predecesor inmediato de j en este camino directo.
+Si no hay un camino directo de i a j (C[i][j] es infinito): P[i][j] = -1 porque no hay un predecesor válido.
