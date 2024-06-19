@@ -1,0 +1,14 @@
+public int cantidadNivelesArbol() {
+    return cantidadNivelesRecursivo(this);
+}
+
+private int cantidadNivelesRecursivo(TElementoAB<T> nodo) {
+    if (nodo == null) {
+        return 0;
+    } else {
+        int izq = cantidadNivelesRecursivo(nodo.getHijoIzq());
+        int der = cantidadNivelesRecursivo(nodo.getHijoDer());
+
+        return Math.max(izq, der) + 1;
+    }
+}
