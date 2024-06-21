@@ -1,0 +1,57 @@
+Kruskal:
+1.	Elegir (A, B) con peso 1:
+o	Verificar conjuntos: A está en {A}, B está en {B}.
+o	No hay ciclo porque A y B están en diferentes conjuntos.
+o	Agregamos (A, B) al AAM y unimos los conjuntos: {A, B}.
+o	Actualizamos la tabla:
+Vértice	Conjunto
+A	{A, B}
+B	{A, B}
+C	{C}
+D	{D}
+E	{E}
+2.	Elegir (B, C) con peso 2:
+o	Verificar conjuntos: B está en {A, B}, C está en {C}.
+o	No hay ciclo porque B y C están en diferentes conjuntos.
+o	Agregamos (B, C) al AAM y unimos los conjuntos: {A, B, C}.
+o	Actualizamos la tabla:
+Vértice	Conjunto
+A	{A, B, C}
+B	{A, B, C}
+C	{A, B, C}
+D	{D}
+E	{E}
+3.	Elegir (C, D) con peso 3:
+o	Verificar conjuntos: C está en {A, B, C}, D está en {D}.
+o	No hay ciclo porque C y D están en diferentes conjuntos.
+o	Agregamos (C, D) al AAM y unimos los conjuntos: {A, B, C, D}.
+o	Actualizamos la tabla:
+Vértice	Conjunto
+A	{A, B, C, D}
+B	{A, B, C, D}
+C	{A, B, C, D}
+D	{A, B, C, D}
+E	{E}
+4.	Elegir (A, C) con peso 5:
+o	Verificar conjuntos: A está en {A, B, C, D}, C está en {A, B, C, D}.
+o	Hay un ciclo porque A y C ya están en el mismo conjunto.
+o	No agregamos la arista al AAM.
+5.	Elegir (C, E) con peso 6:
+o	Verificar conjuntos: C está en {A, B, C, D}, E está en {E}.
+o	No hay ciclo porque C y E están en diferentes conjuntos.
+o	Agregamos (C, E) al AAM y unimos los conjuntos: {A, B, C, D, E}.
+o	Actualizamos la tabla:
+Vértice	Conjunto
+A	{A, B, C, D, E}
+B	{A, B, C, D, E}
+C	{A, B, C, D, E}
+D	{A, B, C, D, E}
+E	{A, B, C, D, E}
+6.	Elegir (D, E) con peso 7:
+o	Verificar conjuntos: D está en {A, B, C, D, E}, E está en {A, B, C, D, E}.
+o	Hay un ciclo porque D y E ya están en el mismo conjunto.
+o	No agregamos la arista al AAM.
+Resultado Final
+El Árbol de Expansión Mínima (AAM) del grafo tiene las siguientes aristas y peso total:
+•	Aristas del AAM: {(A, B), (B, C), (C, D), (C, E)}
+•	Peso total del AAM: 1 + 2 + 3 + 6 = 12
