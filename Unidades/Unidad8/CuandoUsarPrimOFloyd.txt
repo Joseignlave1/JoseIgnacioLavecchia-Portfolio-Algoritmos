@@ -1,0 +1,7 @@
+Árbol de Expansión Mínimo (MST - Minimum Spanning Tree):
+
+Objetivo: Conectar todos los nodos del grafo con el menor costo total posible, sin ciclos, formando un subgrafo que es un árbol.
+Aplicación: Ideal para problemas donde queremos conectar todos los nodos del grafo de forma mínima(más corta) devuelve el AAM.
+
+Objetivo: Encontrar las distancias mínimas entre todos los pares de nodos en un grafo dirigido o no dirigido con pesos (incluidos caminos más cortos para todos los pares de vértices).
+Aplicación: Ideal para problemas donde necesitamos conocer las distancias mínimas entre cada par de nodos en un grafo.
