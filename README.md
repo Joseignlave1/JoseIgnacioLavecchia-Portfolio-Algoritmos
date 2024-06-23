@@ -6,8 +6,9 @@
 
 ## Portfolio de José Ignacio Lavecchia ❤️
 
-### Materia: Algoritmos en la Universidad Católica del Uruguay
+### Materia: Algoritmos 
 
+#### Universidad : Universidad Católica del Uruguay
 ---
 
 ### Descripción:
