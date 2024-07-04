@@ -1,0 +1,81 @@
+Problemas de Leetcode Resueltos Unidad 4:
+
+
+100. Same Tree
+Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+
+Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.
+
+
+public boolean isSameTree(TreeNode p, TreeNode q) {
+        boolean flag = true;
+        if(p==null && q==null)
+         return flag;
+
+       if((p!=null && q==null)||(p==null && q!=null)||(p.val!=q.val))
+         return false;
+        
+        flag = isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
+       
+        return flag;
+    }
+
+
+Explicación:
+
+Queremos  determinar si dos árboles binarios son idénticos, es decir, si tienen la misma estructura y los mismos valores en los nodos correspondientes
+
+Caso Base: Ambos Nodos Nulos:
+
+Si ambos nodos p y q son nulos, entonces los subárboles en estas posiciones son iguales, por lo tanto, retornamos true.
+
+Caso Base: Uno de los Nodos es Nulo o Valores Diferentes:
+
+Si uno de los nodos es nulo mientras que el otro no lo es, o si los valores de los nodos p y q son diferentes, entonces los subárboles no son iguales. En este caso, retornamos false
+
+Recursión en Subárboles Izquierdo y Derecho:
+
+La función llama recursivamente a sí misma para comparar los subárboles izquierdos (p.left y q.left) y los subárboles derechos (p.right y q.right).
+
+
+Tiempo de ejecución O(n)
+
+101. Symmetric Tree
+
+Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+
+
+public boolean isSymmetric(TreeNode root) {
+
+        if(root==null)return true;
+
+        return compare(root.left,root.right);
+
+    }
+    Boolean compare(TreeNode left ,TreeNode right ){
+
+        if(left==null && right==null)return true;
+        if(left==null || right==null)return false;
+
+        return left.val==right.val && compare(left.left,right.right)&& compare(left.right,right.left);
+    }
+
+
+Explicación:
+verifica si un árbol binario es simétrico.
+
+Función principal (isSymmetric):
+
+Si la raíz es null, el árbol es simétrico y retornamos true.
+Llama a la función auxiliar compare para comparar los subárboles izquierdo y derecho de la raíz.
+
+Función auxiliar (compare):
+
+Si ambos nodos (left y right) son null, retornamos true (son simétricos).
+Si uno de los nodos es null y el otro no, retornamos false (no son simétricos).
+
+Comparamos el valor de los nodos actuales y 
+Llamamos recursivamente para comparar los subárboles: el izquierdo del left con el derecho del right, y el derecho del left con el izquierdo del right.
+
+
+Tiempo de ejecución O(n)
