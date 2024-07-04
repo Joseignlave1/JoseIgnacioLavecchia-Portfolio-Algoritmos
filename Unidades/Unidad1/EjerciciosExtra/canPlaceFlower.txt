@@ -1,0 +1,36 @@
+Explicación, Leetcode Problem Can Place Flowers:
+
+ class Solution {
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        int size = flowerbed.length;
+        if(n==0) return true;
+        for(int i=0; i<size; i++){
+            if(flowerbed[i]==0 && (i==0 || flowerbed[i-1]==0) && (i==size-1 || flowerbed[i+1]==0)){
+                n--;
+                if(n==0) return true;
+                flowerbed[i]=1;
+            }
+        }
+        return false;
+    }
+} 
+
+Se recorre cada posición del arreglo flowerbed en un bucle for.
+
+Se verifica si la posición actual (flowerbed[i]) está vacía (==0) y si las posiciones adyacentes (anterior e siguiente) también están vacías. Es decir, se busca un espacio vacío donde se pueda colocar una flor.
+
+Si se encuentra un espacio vacío que cumple con las condiciones, se coloca una flor (flowerbed[i] = 1) y se decrementa el número de flores que aún se deben colocar (n--).
+
+Si después de recorrer todo el lecho de flores se han colocado todas las flores requeridas (n == 0), el método retorna true. De lo contrario, retorna false.
+
+
+El código realiza la acción flowerbed[i]=1; después de comprobar si n (el número de flores restantes por colocar) es igual a cero. Esta acción indica que se ha colocado una flor en la posición actual del lecho de flores (flowerbed[i]). La razón para hacerlo es que, después de colocar una flor en la posición actual, se actualiza el estado del lecho de flores para reflejar que esa posición está ocupada.
+
+
+ flowerbed[i-1] se refiere al elemento en el arreglo flowerbed que está en la posición anterior a la posición i. En otras palabras, es el elemento en la posición a la izquierda de la posición actual i en el arreglo.
+
+En el código, la expresión (i==0 || flowerbed[i-1]==0) se utiliza para verificar si la posición actual i es la primera en el arreglo (i==0) o si la posición anterior (flowerbed[i-1]) está vacía (igual a cero). Si alguna de estas condiciones es verdadera, significa que hay un espacio vacío o que la posición actual es la primera en el arreglo, lo que permite colocar una flor en esa posición.
+
+
+
+
