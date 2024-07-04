@@ -1,0 +1,21 @@
+REFLEXIÓN para fin de Unidad Temática 8  Grafos No Dirigidos
+Las siguientes son  algunas preguntas que pueden servirte como guía para tu reflexión personal sobre tus procesos de aprendizaje,  utilizando como medio los objetivos y actividades de esta Unidad Temática. 
+No es obligatorio que las contestes todas (son sólo una guía!!), e incluso puedes (y se recomienda que lo hagas) explorar otras inquietudes que no estén aquí representadas: lo importante es que, por unos minutos, te concentres en tus procesos de aprendizaje y medites sobre ellos, con el objetivo de procurar identificar acciones que te permitan mejorarlos.
+Recuerda referenciar todas las actividades que te han resultado beneficiosas, y en las carpetas correspondientes, poner las evidencias (trabajos extras, recursos adicionales consultados, ejercicios adicionales realizados y aprendizajes correspondientes obtenidos, etc.).
+Adicionalmente se sugiere analizar las “war stories” recomendadas como anécdotas para la Unidad Temática y reflexionar sobre las mismas (puedes agregar un documento de reflexión específico, y cualesquiera otros artefactos que sean convenientes).
+
+
+•	¿Cuáles son los resultados esperados del aprendizaje de esta Unidad Temática? (escribe lo que tú entiendas que son y significan) 
+Creo qué los resultados esperados en esta unidad son:
+Saber como se recorre un grafo no dirigido, saber cuál es la diferencia entre recorrer un grafo por BPF o BEA, resolver problemas algorítmicos utilizando grafos no dirigidos, implementar y entender los algoritmos de Prim y Kruskal.
+•	¿He alcanzado esos resultados? Documenta la(s) evidencia(s), si corresponde.
+Si considero que he alcanzado estos objetivos, pude implementar después de varios intentos los algoritmos de Prim y Kruskal, y a la vez adquirí el conocimiento mediante los TAS de la unidad acerca de cuál es la diferencia entre recorrer un grafo por BEA o por BPF.
+
+•	¿Qué he aprendido? ¿Por qué aprendí?
+Aprendí de forma muy visual, y lo aprendí además de para aprobar la asignatura, lo aprendí debido a qué el tema realmente me gustó e interesó.
+
+•	¿Qué diferencia ha producido el aprendizaje en mi desarrollo intelectual, personal y ético?
+Ha producido una diferencia considerable en mi desarrollo intelectual personal y ético, ahora siento que tengo un espectro de herramientas mucho más grande a la hora de solucionar problemas técnicos, pudiendo desarrollar, por ejemplo, un algoritmo que me diga teniendo varias estaciones de metro representadas por grafos dirigidos, poder ver si a partir de una estación se puede llegar a todas las otras, o si no, a cuáles específicamente se puede llegar.
+•	¿Dónde, cuándo y cómo me he involucrado en aprendizaje integrado? ¿Ha sido mi aprendizaje conectado y coherente?
+Si, considero que mi aprendizaje ha sido integrado, conectado y coherente debido a qué fui haciendo las cosas en un orden, me refiero teniendo un plan de estudios, asignándome objetivos cada día, lo cuál considero me ayudó a poder aprender los contenidos de la unidad de una mejor manera.
+
