@@ -1,0 +1,15 @@
+UNIDAD TEMÁTICA  # : Arboles binarios y Tries
+REFLEXIÓN RÁPIDA “minute paper”
+(responde rápidamente, en pocos minutos)
+1.	¿Cuál es el concepto más importante que has aprendido o reforzado en esta Unidad Temática?
+
+El concepto más importante que he aprendido fue el de trie, ya que creo qué es una estructura de datos muy eficiente cuando estamos trabajando con Strings.
+
+
+
+
+
+
+2.	¿Cuál es la pregunta más relevante que puedas tener y que creas que no ha sido correctamente respondida, analizada o revisada en esta Unidad Temática?
+
+La pregunta más relevante que puedo tener y qué no ha sido respondida es acerca de la implementación del compressed trie, me hubiera gustado que en clase hubiéramos desarrollado su implementación en clase.
