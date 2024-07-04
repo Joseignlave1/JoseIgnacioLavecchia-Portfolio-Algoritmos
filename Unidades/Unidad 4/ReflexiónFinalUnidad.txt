@@ -1,0 +1,21 @@
+REFLEXIÓN para fin de Unidad Temática
+Las siguientes son  algunas preguntas que pueden servirte como guía para tu reflexión personal sobre tus procesos de aprendizaje,  utilizando como medio los objetivos y actividades de esta Unidad Temática. 
+No es obligatorio que las contestes todas (son sólo una guía!!), e incluso puedes (y se recomienda que lo hagas) explorar otras inquietudes que no estén aquí representadas: lo importante es que, por unos minutos, te concentres en tus procesos de aprendizaje y medites sobre ellos, con el objetivo de procurar identificar acciones que te permitan mejorarlos.
+Recuerda referenciar todas las actividades que te han resultado beneficiosas, y en las carpetas correspondientes, poner las evidencias (trabajos extras, recursos adicionales consultados, ejercicios adicionales realizados y aprendizajes correspondientes obtenidos, etc.).
+Adicionalmente se sugiere analizar las “war stories” recomendadas como anécdotas para la Unidad Temática y reflexionar sobre las mismas (puedes agregar un documento de reflexión específico, y cualesquiera otros artefactos que sean convenientes).
+
+
+•	¿Cuáles son los resultados esperados del aprendizaje de esta Unidad Temática? (escribe lo que tú entiendas que son y significan)
+Los resultados esperados para esta unidad son el aprender cómo está compuesto un árbol, entender el concepto de recursividad, entender el concepto de balanceamiento, realizar problemas prácticos los cuáles requieran el uso de árboles
+•	¿He alcanzado esos resultados? 
+Si, considero que he alcanzado estos resultados y creo qué los puedo ver reflejados en las tareas domiciliarias
+•	¿Qué he aprendido? ¿Por qué aprendí?
+Aprendí como balancear un árbol, el concepto de AVL, cuándo debo utilizar un árbol, cuándo es viable utilizar un algoritmo recursivo.
+
+•	¿Cómo he aprendido – o cómo no? ¿Sé qué tipo de aprendiz soy?
+Considero que soy un aprendiz mayormente visual y auditivo, por ejemplo, los balanceamientos los aprendí mediante dibujos y videos de youtube.
+•	¿Cómo encaja lo que he aprendido en un plan completo y continuo de aprendizaje?
+Considero que encaja en relación con qué es algo fundamental y práctico para mi carrera.
+•	¿Es mi aprendizaje relevante, aplicable y práctico?
+Considero qué este aprendizaje es muy relevante, aplicable y sobre todo práctico, ya qué es conocimiento práctico aplicable desde el minuto uno.
+
