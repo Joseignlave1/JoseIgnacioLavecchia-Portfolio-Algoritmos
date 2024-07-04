@@ -1,0 +1,171 @@
+PREPARACION PREVIA INDIVIDUAL.
+¿Has leído y comprendido los objetivos de aprendizaje de cada unidad temática?	CHECK-Sí, completamente
+____ Sí los leí, pero no profundamente
+____ Apenas los miré a veces
+____ No les he prestado atención
+¿Cuántas horas has dedicado al estudio de la bibliografía recomendada? (en promedio para cada Unidad Temática)	____ menos de 2 horas
+____ entre 2 y 4 horas
+ CHECK-entre 4 y 6 horas
+____ más de 6 horas
+¿Cuántos días (en promedio) antes de cada iRAT comenzaste a estudiar? 
+	____ el mismo día
+____ el día anterior
+CHECK-dos días antes
+____ más de dos días antes
+Si, durante el estudio previo, te surgieron dudas: 	
+
+	¿Las consultaste con compañeros del Equipo?
+	____ Sí, mucho
+CHECK-Algunas veces
+____Casi nunca
+____Nunca
+
+	¿Las consultaste con los profesores? 
+	____ Sí, mucho
+CHECK-Algunas veces
+____ Casi nunca
+____Nunca
+	¿Has utilizado los foros existentes en cada sección de la webasignatura para preguntas y respuestas sobre el tema específico?	____ Sí, mucho
+____Algunas veces
+____ Muy pocas veces
+CHECK-Nunca
+¿Cuál fue tu promedio de notas en los iRAT?	____  menor de 35
+____entre 35 y 50
+CHECK-entre 50 y 70
+____mayor de 70
+¿Se condice con el tiempo y / o esfuerzo que dedicaste a estudiar previamente? 
+	____  Sí             CHECK-No 
+Si marcaste “No”, escribe cuál o cuáles crees que fueron los motivos
+
+El motivo por el que creo qué no coincide es por el hecho de qué siento que me pongo muy nervioso al realizar los iRAT, debo realizarlos con más calma.
+
+
+
+PROCESO DE ASEGURAMIENTO DEL ALISTAMIENTO.
+¿Cuál fue el promedio de calificaciones que obtuviste en los tRAT hasta ahora?
+ ¿Mayor que en los iRAT? (Si- NO)	____  menor de 50
+____entre 50 y 70
+____ entre 70 y 90
+CHECK-mayor de 90
+¿Pudiste verificar en los mismos que tú aportaste al Equipo, y que otros compañeros también lo hicieron?	CHECK-Sí, todos aportamos equitativamente
+____  Otros aportaron mucho menos que yo
+____  Yo podría haber aportado más, de haberme preparado mejor
+¿Crees que la calificación podría haber sido superior si todos los integrantes del Equipo se hubieran preparado más? (lo cual se habría reflejado en mayores calificaciones de los iRATs)	CHECK-Si
+____No
+
+
+PREPARACIÓN Y EJECUCIÓN DE EJERCICIOS DE APLICACIÓN 
+¿Te preparaste entre clases para poder ser más efectivo en los ejercicios de aplicación?
+	CHECK-Sí, mucho
+____ Algo
+____ Poco
+____Casi nada
+¿Volviste a revisar las lecturas recomendadas, incluyendo las complementarias?
+	____ Sí, mucho
+____ Algo
+CHECK-Poco
+____Casi nada
+¿Realizaste los ejercicios domiciliarios u otros ejercicios del mismo tipo que estuvieran en las lecturas o material adicional? (algoritmos en seudocódigo, cálculo del orden del tiempo de ejecución, etc.)
+	____ Sí, mucho
+CHECK-Algo
+____ Poco
+____Casi nada
+¿Has practicado la programación en lenguaje JAVA, el desarrollo de Test Cases y la documentación del código mediante JAVADOC?	Si, aunque no consulté demasiado la documentación de JAVADOC
+	¿Cuántos programas JAVA has desarrollado y ejecutado (individualmente)
+(cuántos tienes en tu workspace de netbeans)	CHECK-más de 30
+____ entre 10 y 30 
+____ menos de 10
+____ninguno
+	¿Cuántas líneas de código JAVA has escrito (individualmente)?
+(cuántas tienes en tu workspace de netbeans)
+	CHECK-más de 1000
+____ entre 500 y 1000
+____ entre 50 y 200
+____ menos de 50
+	¿Cuántos casos de prueba – test cases- has desarrollado y ejecutado (individualmente)? 
+(cuántos tienes en tu workspace de netbeans)	____ más de 20
+CHECK-entre 10 y 20
+____ entre 3 y 10
+____ menos de 3
+	¿Cuál fue el promedio obtenido hasta ahora por tu equipo en los Trabajos de Aplicación?
+	____  menor de 50
+____entre 50 y 70
+____ entre 70 y 90
+CHECK-mayor de 90
+	¿Cómo evalúas la relación entre el esfuerzo que has aplicado a prepararte fuera de clase para la realización de los ejercicios en equipo, con los  resultados obtenidos en los Trabajos de Aplicación?	CHECK-razonable, alcanzamos a producir acorde a nuestro nivel de preparación
+____resulta claro que era necesaria una preparación mayor
+____mi equipo debería funcionar mejor para ser más productivo
+____no importa cuánto me prepare, no incide en los resultados
+
+
+PREPARACION PARA EL PARCIAL
+¿Cuántas horas dedicaste a estudiar para el parcial? (específicamente)
+	CHECK-más de 20 
+-----entre 10 y 20
+____ entre 3 y 10
+____menos de 3
+¿Cuántos días antes del parcial comenzaste a prepararte para el mismo? (específicamente)	____ el mismo día
+____ el día anterior
+____entre  dos y cuatro días antes
+CHECK-más de cuatro días antes
+¿Revisaste nuevamente toda la bibliografía recomendada de las Unidades incluidas en la prueba?	____ Sí, mucho
+____ Algo
+CHECK-Poco
+____Casi nada
+¿Completaste la evaluación de práctica publicada en la webasignatura	CHECK-Sí, varias veces
+____ Un poco
+____ No
+¿Qué calificación obtuviste en la parte teórica del parcial?	CHECK-menor de 35
+____entre 35 y 55
+____ entre 56 y 80
+____mayor de 80
+¿Realizaste nuevamente todos los ejercicios de aplicación y ejercicios domiciliarios publicados en la webasignatura?	____ Sí, todos
+CHECK-Unos cuantos
+____ Algunos pocos
+____No, ninguno
+Si te surgieron dudas en diversos temas, 	
+	¿Las consultaste con tus compañeros de Equipo u otros compañeros del curso?	____ Sí, mucho
+CHECK-Algunas veces
+____ Casi nunca
+____Nunca
+	Utilizaste el foro de la webasignatura disponible para preguntas- respuestas de los temas que se evaluaron en el parcial?	____ Sí, mucho
+____Algunas veces
+CHECK-Casi nunca
+____Nunca
+	¿Consultaste a los profesores fuera de clase?	____ Sí, mucho
+____Algunas veces
+CHECK-Casi nunca
+____Nunca
+¿Cómo crees que fue tu desempeño en la PARTE 1 (seudocódigo) del parcial?	____Destacado
+CHECK-Aceptable
+____Insuficiente
+	
+¿Revisaste los ejercicios de programación dispuestos en las diversas Unidades (como trabajos de aplicación y ejercicios domiciliarios individuales?
+	CHECK-Sí, mucho
+____Algunas veces
+____ Casi nunca
+____Nunca
+¿Revisaste cotidianamente los tutoriales de JAVA y otros recursos sobre el lenguaje publicados?
+	CHECK-Sí, mucho
+____Algunas veces
+____ Muy poco
+____Nunca
+¿Cuántos programas JAVA hiciste como forma de estudiar para el parcial?
+	CHECK-más de 30
+____ entre 10 y 30 
+____ menos de 10
+____ninguno
+¿Cuántos “test cases” desarrollaste?
+	____ más de 20
+____ entre 10 y 20
+CHECK-entre 3 y 10
+____ menos de 3
+¿Cuántas veces generaste documentación con JAVADOC?
+	____ más de 20
+____ entre 10 y 20
+CHECK-entre 3 y 10
+____ menos de 3
+¿Cómo crees que fue tu desempeño en la PARTE 3 (programación JAVA) del parcial?
+	____Destacado
+CHECK-Aceptable
+____Insuficiente
