@@ -1,0 +1,154 @@
+ 
+
+SI ARISTAS SON NO DIRIGIDAS, (Vi, Vj) = (Vj, Vi) entonces el grafo es NO DIRIGIDO
+
+ 
+
+SI (v,w) es una arista, se dice que es INCIDENTE sobre los vértices V y W, y estos vértices son ADYACENTES entre sí.
+
+Un camino en un grafo es una secuencia de vértices, denotada como v1,v2,…,vn donde cada par consecutivo de vértices en esta secuencia está conectado por una arista en el grafo.
+
+La notación (vi, vi + 1)  significa que existe una arista que conecta el vértice vi  con el vértice vi + 1
+
+GRAFO CONEXO: Todos sus pares de vértices están conectados.
+
+
+
+CICLO SIMPLE:
+Camino(Simple) de longitud MAYOR O IGUAL A 3, que conecta un vértice consigo mismo.
+ 
+
+ARBOL LIBRE:
+-GRAFO NO DIRIGIDO CONEXO ACÍCLICO(SIN CICLOS)
+
+-Puede convertirse en un ARBOL NORMAL, eligiendo un VÉRTICE COMO RAÍZ
+
+-Todo árbol libre con n >= 1 vértices, tiene N -1 ARISTAS
+
+-Si se agrega CUALQUIER ARISTA a un ÁRBOL LIBRE, RESULTA EN UN CICLO.
+ 
+
+METODOS DE REPRESENTACIÓN:
+-MISMOS QUE EN GRAFOS DIRIGIDOS, MATRICES, O LISTAS DE ADYACENCIAS.
+-Una arista NO DIRIGIDA entre V y W  se representa mediante DOS ARISTAS DIRIGIDAS, DE V a W y de W a V
+-La MATRIZ DE ADYACENCIAS es SIMÉTRICA
+
+ 
+
+ÁRBOL ABARCADOR DE G(V,A)
+-Es un árbol libre que conecta TODOS los vértices de V
+-Costo de ese árbol  = suma de los costos de todas las aristas.
+
+ 
+Árbol Abarcador de Costo Mínimo (AAM) es un subconjunto de las aristas de un grafo conexo no dirigido, que conecta todos los vértices del grafo sin formar ciclos y con el costo total mínimo posible
+
+Sea G=(V,A)  un grafo conexo con una función de costo definida para sus aristas. Supongamos que U es un subconjunto propio del conjunto de vértices V
+
+Si (u,v) es una arista de costo mínimo tal que u pertenece a U y v pertenece a V−U, entonces existe un Árbol Abarcador de Costo Mínimo que incluye la arista (u,v) entre sus aristas.
+
+Esta propiedad nos dice que en la búsqueda de un Árbol Abarcador de Costo Mínimo, siempre podemos considerar una arista de menor costo que conecta un subconjunto U de vértices con el resto del grafo V-U, y asegurar que esta arista estará en al menos un Árbol Abarcador de Costo Mínimo. Esta propiedad es esencial para los algoritmos que construyen el AAM. 
+
+ 
+
+¬¬¬¬ 
+
+ALGORITMO DE PRIM: 
+Método TGRAFO.Prim (conjunto de aristas T)
+    U: conjunto de vértices;
+    u, v: vértice;
+    // el TGRAFO representado por un conjunto de vértices V y un conjunto de Aristas A
+    COMIENZO
+        T.Vaciar;
+        U.Agregar(1);
+        MIENTRAS U <> V hacer
+            elegir una arista (u, v) de costo mínimo
+            tal que u está en U y v está en V - U;
+            T.Agregar(u, v);
+            U.Agregar(v);
+        FIN MIENTRAS
+    FIN;
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+Empezamos vaciando  F, el conjunto de aristas, repetimos  hasta que quede totalmente vacío.
+ 
+Después elegimos una arista de costo mínimo tal que no este en F(conjunto de aristas), y que no haya sido elegida anteriormente
+
+Si esa arista no conecta dos vértices al mismo componente(si lo hace entonces sería un ciclo) la agregamos a F, repetimos el proceso hasta que todos los vértices estén en un solo componente, lo que nos devolvería el AAM
+ 
+RECORRER UN GRAFO NO DIRIGIDO:
+-Visitar sistemáticamente todos los vértices del grafo.
+
+-Existen DOS TÉCNICAS: BUSQUEDA EN PROFUNDIDAD Y BÚSQUEDA EN AMPLITUD.
+
+ 
+
+SI EL GRAFO ES CONEXO, AL APLICAR BUSQUEDA EN PROFUNDIDAD, SE OBTIENE UN SOLO ÁRBOL
+-EXISTEN DOS CLASES DE ÁRISTAS PARA GRAFOS NO DIRIGIDOS: ARISTAS DE ÁRBOL Y ARISTAS DE RETROCESO.
+ 
+ 
+
+-DESDE CADA VÉRTICE V PRIMERO SE VISITAN TODOS LOS ADYACENTES, PARA LUEGO VISITAR LOS DESCENDIENTES.
+-Si el grafo NO ES CONEXO, entonces la BÚSQUEDA EN AMPLITUD, debe realizarse A PARTIR DE UN VÉRTICE DE CADA COMPONENTE.
+
+ 
+
+ 
+
+`Tvertice.bea`:
+
+Método Tvertice.bea : String
+    // {bea visita todos los vértices conectados a v usando búsqueda en amplitud.}
+    C: ColaDeVértices;
+    x, y: Vértice;
+    tempstr: String;
+    
+    COM
+        Visitar();
+        C.Insertar(this);
+        tempstr <- tempstr + etiqueta;
+        
+        mientras no vacía(C) hacer
+            x <- C.eliminar() // en x queda el elemento frente de la cola
+            
+            para cada vértice y adyacente a x hacer
+                Si no y.Visitado() entonces
+                    y.Visitar();
+                    C.insertar(y);
+                    tempstr <- tempstr + y.etiqueta;
+                fin si
+            fin para cada
+        fin mientras
+        
+        Devolver tempstr
+    FIN; {bea}
+
+Este pseudocódigo utiliza la búsqueda en amplitud (BFS) para visitar todos los vértices conectados y construir una cadena (`tempstr`) con las etiquetas de los vértices visitados.
+
+ 
+
+
+-Un grafo SIN PUNTOS DE ARTICULACIÓN, se le llama “GRAFO BICONEXO”
+-Un grafo tiene conectividad k si la eliminación de k-1 vértices cualesquiera no lo desconecta.
+
+Un punto de articulación, en un grafo es un vértice tal que, si se elimina junto con todas las aristas incidentes sobre él, dividirá el grafo en dos o más componentes conexos.
+ 
+
+-Los puntos de articulación se encuentran de la siguiente manera:
+-La raíz es un punto de articulación SI y SOLO SÍ, tiene DOS O MÁS HIJOS
+-Para los vértices que no son la raíz, se evalúa si alguno de sus hijos w tiene un valor de bajo (bajo[w]) mayor o igual al número de punto de articulación (número_bp[v]) del vértice v actual. Si es así, esto significa que no hay una forma más fácil de alcanzar el subárbol de w sin pasar a través de v, lo que indica que v es un punto de articulación.
+ 
+ 
+  
+ 
+
