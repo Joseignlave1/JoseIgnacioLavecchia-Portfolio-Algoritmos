@@ -1,0 +1,12 @@
+UNIDAD TEMÁTICA 9 # : Ordenación
+REFLEXIÓN RÁPIDA “minute paper”
+(responde rápidamente, en pocos minutos)
+1.	¿Cuál es el concepto más importante que has aprendido o reforzado en esta Unidad Temática?
+
+El concepto mas importante que considero he aprendido en esta unidad es el de QuickSort, ya qué es un algoritmo muy eficiente, útil y práctico.
+
+
+
+2.	¿Cuál es la pregunta más relevante que puedas tener y que creas que no ha sido correctamente respondida, analizada o revisada en esta Unidad Temática?
+
+   Me hubiera gustado indagar más en el tema cuenta por distribución, y aprender cómo funciona el algoritmo.
