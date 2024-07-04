@@ -1,0 +1,20 @@
+REFLEXIÓN para fin de Unidad Temática 7 Grafos Dirigidos.
+Las siguientes son algunas preguntas que pueden servirte como guía para tu reflexión personal sobre tus procesos de aprendizaje,  utilizando como medio los objetivos y actividades de esta Unidad Temática. 
+No es obligatorio que las contestes todas (son sólo una guía!!), e incluso puedes (y se recomienda que lo hagas) explorar otras inquietudes que no estén aquí representadas: lo importante es que, por unos minutos, te concentres en tus procesos de aprendizaje y medites sobre ellos, con el objetivo de procurar identificar acciones que te permitan mejorarlos.
+Recuerda referenciar todas las actividades que te han resultado beneficiosas, y en las carpetas correspondientes, poner las evidencias (trabajos extras, recursos adicionales consultados, ejercicios adicionales realizados y aprendizajes correspondientes obtenidos, etc.).
+Adicionalmente se sugiere analizar las “war stories” recomendadas como anécdotas para la Unidad Temática y reflexionar sobre las mismas (puedes agregar un documento de reflexión específico, y cualesquiera otros artefactos que sean convenientes).
+
+
+•	¿Cuáles son los resultados esperados del aprendizaje de esta Unidad Temática? (escribe lo que tú entiendas que son y significan)
+Los resultados esperandos para esta unidad son: Poder resolver problemas representados con grafos Dirigidos, entender como se recorre un grafo , saber cómo implementar y para qué sirven los distintos algoritmos trabajados en clase (Floyd, Dijkstra, Warshall, etc)
+
+•	¿He alcanzado esos resultados? Documenta la(s) evidencia(s), si corresponde.
+Considero que he alcanzado estos resultados, ya qué pude resolver bastantes algoritmos los cuáles pueden ser en el TDA que desarrollé para el parcial(el cuál está en mi portfolio)
+•	¿Qué he aprendido? ¿Por qué aprendí?
+Siento que he aprendido de una manera muy visual, viendo fotos y videos de youtube sobre los algoritmos(además de estudiar en base a las ppts facilitadas en el curso) los cuáles me ayudaron a comprender mejor el funcionamiento de los grafos dirigidos y sus algoritmos.
+•	¿Es mi aprendizaje relevante, aplicable y práctico?
+Si, debido a qué pude solucionar algoritmos por mi cuenta, considero que es un conocimiento muy práctico, y qué puede ser utilizado en varios ámbitos del mundo tanto académico y profesional, como por ejemplo una aplicación en la que queremos determinar el camino más corto para ir de un lugar a otro en Montevideo.
+•	¿Cuándo, cómo y por qué mi aprendizaje me ha sorprendido?
+Mi aprendizaje me ha sorprendido debido a qué al principio consideraba el pseudocódigo de los algoritmos muy complicado, pero tras la implementación en java pude entender mejor su lógica.
+•	¿De qué maneras mi aprendizaje ha sido valioso?
+Ha sido valioso en la manera en que he adquirido conocimiento práctico, qué me va a servir para mi futura vida profesional y académica.
