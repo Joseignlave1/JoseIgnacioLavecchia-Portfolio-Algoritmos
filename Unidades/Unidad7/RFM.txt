@@ -1,0 +1,11 @@
+UNIDAD TEMÁTICA  7# : Grafos Dirigidos
+REFLEXIÓN RÁPIDA “minute paper”
+(responde rápidamente, en pocos minutos)
+1.	¿Cuál es el concepto más importante que has aprendido o reforzado en esta Unidad Temática?
+
+El concepto más importante que aprendí fue la búsqueda en profundidad BPF para recorrer a un grafo Dirigido, ya qué a partir de ella podemos construir muchos algoritmos y solucionar muchos problemas relacionados con grafos Dirigidos.
+
+
+2.	¿Cuál es la pregunta más relevante que puedas tener y que creas que no ha sido correctamente respondida, analizada o revisada en esta Unidad Temática?
+
+La pregunta más relevante que puedo tener y qué no ha sido respondida es acerca de cómo determinar la existencia de múltiples caminos de longitud mínima entre dos nodos en un grafo dirigido.
