@@ -1,0 +1,215 @@
+Ejercicios Extra unidad 9:
+
+
+Encuentra el k-ésimo Elemento Más Grande en un Array
+
+
+Dado un array de números enteros, encuentra el k-ésimo elemento más grande.
+
+
+
+public class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        for (int num : nums) {
+            minHeap.add(num);
+            if (minHeap.size() > k) {
+                minHeap.poll();
+            }
+        }
+        return minHeap.peek();
+    }
+
+
+Explicación:
+
+Utilizamos una PriorityQueue (min-heap) para mantener los k elementos más grandes del array.
+
+Recorremos cada número en el array nums.
+
+Añadimos cada número al min-heap.
+
+Si el tamaño del min-heap excede k, eliminamos el elemento más pequeño (la raíz del min-heap).
+Resultado:
+
+
+Después de procesar todos los elementos, el elemento en la raíz del min-heap (el más pequeño de los k elementos más grandes) es el k-ésimo elemento más grande del array.
+
+Orden de tiempo de ejecución; O(log k)
+
+Ordenar una Matriz por su Diagonal
+
+Dada una matriz de m x n, ordena cada una de sus diagonales individualmente y devuelve la matriz resultante.
+
+
+public class Solution {
+    public int[][] diagonalSort(int[][] mat) {
+        int m = mat.length, n = mat[0].length;
+
+        for (int d = 0; d < m; d++) {
+            sortDiagonal(mat, d, 0);
+        }
+        for (int d = 1; d < n; d++) {
+            sortDiagonal(mat, 0, d);
+        }
+
+        return mat;
+    }
+
+    private void sortDiagonal(int[][] mat, int row, int col) {
+        List<Integer> diagonal = new ArrayList<>();
+        int r = row, c = col;
+        while (r < mat.length && c < mat[0].length) {
+            diagonal.add(mat[r++][c++]);
+        }
+        Collections.sort(diagonal);
+        r = row;
+        c = col;
+        for (int val : diagonal) {
+            mat[r++][c++] = val;
+        }
+    }
+
+
+Explicación:
+
+Obtenemos el número de filas (m) y columnas (n) de la matriz mat.
+
+Iteramos desde la primera fila hasta la última fila.
+
+Para cada fila d, llamamos al método sortDiagonal para ordenar la diagonal que comienza en la posición (d, 0).
+
+
+Iteramos desde la segunda columna hasta la última columna.
+
+Para cada columna d, llamamos al método sortDiagonal para ordenar la diagonal que comienza en la posición (0, d).
+
+
+Recogemos todos los elementos de una diagonal específica en una lista llamada diagonal.
+
+Ordenamos la lista de elementos usando Collections.sort.
+
+Volvemos a colocar los elementos ordenados en la misma diagonal en la matriz mat.
+
+Orden de tiempo de ejecución: O((m + n)⋅min(m,n)log min(m,n)).
+
+Ordenar una Matriz por la Frecuencia de sus Elementos
+
+
+
+
+
+Dado un array de números enteros, ordena los elementos por su frecuencia. Los elementos con mayor frecuencia deben aparecer primero. Si dos elementos tienen la misma frecuencia, el elemento menor debe aparecer primero.
+
+public class Solution {
+    public int[] frequencySort(int[] nums) {
+        Map<Integer, Integer> countMap = new HashMap<>();
+        for (int num : nums) {
+            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+        }
+
+        List<Integer> numList = new ArrayList<>();
+        for (int num : nums) {
+            numList.add(num);
+        }
+
+        numList.sort((a, b) -> {
+            int freqA = countMap.get(a);
+            int freqB = countMap.get(b);
+            if (freqA == freqB) {
+                return a - b;
+            } else {
+                return freqB - freqA;
+            }
+        });
+
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = numList.get(i);
+        }
+
+        return nums;
+    }
+
+Explicación:
+
+
+Utilizamos un HashMap (countMap) para contar la frecuencia de cada elemento en el array nums.
+
+Recorremos cada número en nums y actualiza el conteo en el countMap.
+
+
+Creamos una lista (numList) para almacenar los elementos de nums.
+Añadimos cada elemento de nums a numList.
+Ordenamos la Lista por Frecuencia:
+
+Ordenamos numList utilizando un comparador personalizado:
+Primero comparamos las frecuencias de dos elementos (freqA y freqB) usando countMap.
+
+Si las frecuencias son iguales, comparamos los valores de los elementos directamente para que los elementos menores aparezcan primero.
+Si las frecuencias son diferentes, colocamos los elementos con mayor frecuencia primero.
+
+
+Recorre numList ordenada y asignamos los elementos de vuelta a nums.
+
+Orden de tiempo de ejecución: O(n log n)
+
+
+
+Mezclar Rangos de Números
+Dado un conjunto de rangos (intervalos), combina los intervalos superpuestos y devuelve el conjunto de intervalos combinados.
+
+public class Solution {
+    public int[][] merge(int[][] intervals) {
+        if (intervals.length == 0) {
+            return new int[0][];
+        }
+
+        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+
+        List<int[]> merged = new ArrayList<>();
+        int[] currentInterval = intervals[0];
+        merged.add(currentInterval);
+
+        for (int[] interval : intervals) {
+            int currentEnd = currentInterval[1];
+            int nextBegin = interval[0];
+            int nextEnd = interval[1];
+
+            if (currentEnd >= nextBegin) {
+                currentInterval[1] = Math.max(currentEnd, nextEnd);
+            } else {
+                currentInterval = interval;
+                merged.add(currentInterval);
+            }
+        }
+
+        return merged.toArray(new int[merged.size()][]);
+    }
+
+Explicación:
+
+
+Si no hay intervalos (intervals.length == 0), retornamos un array vacío.
+
+
+Ordenamos los intervalos en función del valor inicial de cada intervalo usando Arrays.sort con un comparador.
+
+Creamos una lista (merged) para almacenar los intervalos combinados.
+
+Inicializamos el primer intervalo como el intervalo actual (currentInterval) y lo añadimos a la lista merged.
+
+
+Recorremos cada intervalo en intervals:
+
+Obtenemos el final del intervalo actual (currentEnd).
+
+Obtenemos el inicio y el final del siguiente intervalo (nextBegin y nextEnd).
+
+Si el final del intervalo actual es mayor o igual al inicio del siguiente intervalo (currentEnd >= nextBegin), combinamos los intervalos actualizando el final del intervalo actual con el máximo de ambos finales.
+
+Si no se superponen, actualizamos el intervalo actual a interval y lo añadimos a la lista merged.
+
+
+Convertimos la lista merged a un array bidimensional y retornamos el resultado.
+
+Orden de tiempo de ejecución: O(n log n)
