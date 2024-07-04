@@ -79,3 +79,83 @@ Llamamos recursivamente para comparar los subárboles: el izquierdo del left con
 
 
 Tiempo de ejecución O(n)
+
+
+
+104. Maximum Depth of Binary Tree
+
+Given the root of a binary tree, return its maximum depth.
+
+A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+
+
+ public int maxDepth(TreeNode root) {
+
+        if(root==null)
+        return 0;
+
+        return 1+Math.max(maxDepth(root.left),maxDepth(root.right));
+        
+    }
+
+Explicación:
+
+Se pide calcular la profundidad máxima de un árbol binario.
+
+Caso base:
+
+Si el nodo raíz es null, el árbol está vacío y la profundidad es 0
+
+Si el nodo raíz no es null, procedemos a calcular la profundidad máxima de los subárboles izquierdo y derecho de la raíz.
+
+La llamada recursiva maxDepth(root.left) calcula la profundidad máxima del subárbol izquierdo.
+
+La llamada recursiva maxDepth(root.right) calcula la profundidad máxima del subárbol derecho.
+
+
+Una vez que se han calculado las profundidades máximas de los subárboles izquierdo y derecho, tomamos el máximo de estos dos valores usando Math.max(maxDepth(root.left), maxDepth(root.right)).
+Se suma 1 al resultado para contar el nodo raíz actual en la profundidad. Este 1 representa el nivel actual en el árbol.
+
+Tiempo de ejecución: O(n)
+
+
+
+110. Balanced Binary Tree
+
+Given a binary tree, determine if it is 
+height-balanced
+
+ public boolean isBalanced(TreeNode root) {
+        if(root==null)return true;
+        int lh = bpf(root.left);
+        int rh = bpf(root.right);
+
+        if(Math.abs(lh-rh)>1){
+            return false;
+        }
+
+        return isBalanced(root.left) && isBalanced(root.right);
+    }
+    public int bpf(TreeNode root){
+        if(root == null){
+            return 0;
+        }
+
+        int lh = bpf(root.left);
+        int rh = bpf(root.right);
+
+        return 1+Math.max(lh,rh);
+    }
+
+
+Explicación:
+
+Se pide determinar si un árbol binario está balanceado o no
+
+
+Con el método isBalanced verificamos si un árbol binario está balanceado. Para ello, hacemos bpf para calcular la altura de cada subárbol.  después en 
+
+isBalanced verificamos recursivamente que la diferencia de altura entre los subárboles izquierdo y derecho de cada nodo no sea mayor a 1, asegurando así que el árbol esté balanceado.
+
+
+Tiempo de ejecución O(n al cuadrado) en el peor caso.
