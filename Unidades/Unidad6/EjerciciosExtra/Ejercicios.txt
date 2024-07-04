@@ -1,0 +1,169 @@
+Problemas de Leetcode Resueltos Unidad 6:
+
+169. Majority Element
+
+Given an array nums of size n, return the majority element.
+
+The majority element is the element that appears more than n/2 times. You may assume that the majority element always exists in the array.
+
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        HashMap<Integer,Integer> hm = new HashMap<>();
+		for(int i:nums) {
+			hm.put(i, hm.getOrDefault(i, 0)+1);
+		}
+		for(Map.Entry<Integer, Integer> map:hm.entrySet()) {
+			Integer val = map.getValue();
+			Integer key = map.getKey();
+			if(val>nums.length/2) {
+				return key;
+			}
+		}
+		return 0;
+    }
+}
+
+
+Explicación:
+
+Se pide encontrar el elemento mayoritario en un array de enteros(aquel que aparece mas de la mitad de veces en el array) debemos asumir que siempre existe un elemento mayoritario en este array.
+
+
+Creamos un HashMap para contar la frecuencia de cada elemento en el array nums.
+
+Después recorremos el array y actualizamos la cuenta de cada elemento en el HashMap.
+
+Finalizamos el algoritmo recorriendo las entradas del HashMap y encontrando el elemento cuya frecuencia es mayor que la mitad de la longitud del array (nums.length / 2), finalmente lo devolvemos elemento.
+
+Orden de tiempo de ejecución: O(n)
+
+
+
+1. Two Sum
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+
+ public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> complements = new HashMap<>();
+        for(int i = 0; i < nums.length; i++) {
+            Integer complementsIndex = complements.get(nums[i]);
+            if(complementsIndex != null) {
+                return new int[] {i, complementsIndex};
+            }
+            complements.put(target - nums[i], i);
+        }
+        return nums;
+    }
+
+
+
+Explicación:
+
+El clásico de leetcode Two Sum, básicamente nos dan un array de nums y un target, tenemos que las posiciones de los elementos que sumados son iguales al target.
+
+
+
+Creamos un HashMap llamado complements para almacenar los complementos necesarios para alcanzar el target y sus índices correspondientes. 
+
+Después, para cada elemento, verificamos si su complemento (el valor que, junto con el elemento actual, suma target) ya está en el HashMap.
+
+Si el complemento está en el HashMap, devolvemos los índices actuales y el índice almacenado en el HashMap.
+
+Si el complemento no está en el HashMap, almacenamos el complemento del elemento actual (es decir, target - nums[i]) y su índice en el HashMap. Si encuentra un par que sume target, retornamos a un array con los dos índices.
+
+Tiempo de ejecución: O(n)
+
+
+
+
+242. Valid Anagram
+
+
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+public boolean isAnagram(String s, String t) {
+        HashMap<Character, Integer> hm = new HashMap<>();
+        for(int i=0; i< s.length(); i++){
+            char ch = s.charAt(i);
+            hm.put(ch, hm.getOrDefault(ch, 0) + 1);
+        }
+        for(int i=0; i< t.length(); i++){
+            char c = t.charAt(i);
+            if(hm.containsKey(c)){
+                if(hm.get(c) == 1) hm.remove(c);
+                else hm.put(c, hm.get(c) - 1);
+            }
+            else return false;
+        }
+        return hm.isEmpty();
+    }
+
+Explicación:
+
+Se pide determinar si dos cadenas, s y t, son anagramas. Dos cadenas son anagramas si contienen los mismos caracteres con la misma frecuencia.
+
+
+Se crea un HashMap para contar la frecuencia de cada carácter en la primera cadena s. Recorremos la cadena s y actualizamos el HashMap con la frecuencia de cada carácter. Recorremos la cadena t y, por cada carácter, verificamos si existe en el HashMap.
+
+Si existe y su frecuencia es 1, lo eliminamos del HashMap; si su frecuencia es mayor que 1, reducimos su cuenta en 1, si un carácter no se encuentra en el HashMap, devolvemos false.
+
+Después de procesar ambas cadenas, si el HashMap está vacío, significa que s y t son anagramas y retorna devolvemos true.
+Si el HashMap no está vacío, devolvemos false.
+
+
+Orden de tiempo de ejecución: O(n)
+
+
+13. Roman to Integer
+
+
+Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+
+public int romanToInt(String s) {
+        HashMap<Character,Integer> hm = new HashMap<>();
+        hm.put('I',1);
+        hm.put('V',5);
+        hm.put('X',10);
+        hm.put('L',50);
+        hm.put('C',100);
+        hm.put('D',500);
+        hm.put('M',1000);
+        int pval=0;
+        int ans=0;
+        for(int i=s.length()-1;i>=0;i--){
+            int cval = hm.get(s.charAt(i));            
+            if(cval >= pval)
+                ans+=cval;
+            else
+                ans-=cval;
+            pval=cval;
+        }
+        return ans;
+    }
+
+
+
+Explicación:
+
+Dado un numero romano, escribir su equivalente a entero.
+
+
+
+Creamos un HashMap que asocia cada carácter romano ('I', 'V', 'X', 'L', 'C', 'D', 'M') con su valor entero correspondiente, la variable pval almacena el valor del carácter procesado previamente (anterior). La variable ans almacena el resultado acumulado del número entero. Se recorre la cadena s de derecha a izquierda, obteniendo el valor entero del carácter actual cval usando el HashMap.
+Si cval es mayor o igual a pval, añade cval a ans.
+Si cval es menor que pval, resta cval de ans.
+Actualizamos pval con el valor cval actual para usar en la siguiente iteración.
+
+devolvemos el valor acumulado ans, que es el equivalente entero del número romano.
+
+
+
+Tiempo de ejecución O(n)
