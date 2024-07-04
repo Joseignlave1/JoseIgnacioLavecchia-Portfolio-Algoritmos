@@ -1,0 +1,12 @@
+REFLEXIÓN RÁPIDA “minute paper”
+(responde rápidamente, en pocos minutos)
+1.	¿Cuál es el concepto más importante que has aprendido o reforzado en esta Unidad Temática?
+
+      Considero qué el concepto más importante que he aprendido es el árbol AVL, me pareció muy interesante y me gustó mucho aprender sobre cómo se balancea.
+
+
+
+
+2.	¿Cuál es la pregunta más relevante que puedas tener y que creas que no ha sido correctamente respondida, analizada o revisada en esta Unidad Temática?
+
+    La pregunta más relevante que podría tener es acerca de cómo se puede calcular el diámetro de un árbol binario, definido como la longitud del camino más largo entre dos nodos cualesquiera en el árbol.
