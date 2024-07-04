@@ -1,0 +1,18 @@
+REFLEXIÓN para fin de Unidad Temática #9 – Ordenación: 
+Las siguientes son  algunas preguntas que pueden servirte como guía para tu reflexión personal sobre tus procesos de aprendizaje,  utilizando como medio los objetivos y actividades de esta Unidad Temática. 
+No es obligatorio que las contestes todas (son sólo una guía!!), e incluso puedes (y se recomienda que lo hagas) explorar otras inquietudes que no estén aquí representadas: lo importante es que, por unos minutos, te concentres en tus procesos de aprendizaje y medites sobre ellos, con el objetivo de procurar identificar acciones que te permitan mejorarlos.
+Recuerda referenciar todas las actividades que te han resultado beneficiosas, y en las carpetas correspondientes, poner las evidencias (trabajos extras, recursos adicionales consultados, ejercicios adicionales realizados y aprendizajes correspondientes obtenidos, etc.).
+Adicionalmente se sugiere analizar las “war stories” recomendadas como anécdotas para la Unidad Temática y reflexionar sobre las mismas (puedes agregar un documento de reflexión específico, y cualesquiera otros artefactos que sean convenientes).
+
+
+•	¿Cuáles son los resultados esperados del aprendizaje de esta Unidad Temática? (escribe lo que tú entiendas que son y significan)
+Creo que los resultados esperados del aprendizaje en esta unidad son:  Entender y aplicar los métodos de ordenamiento Inserción, Intercambio, Selección, saber cómo funcionan.
+También saber identificar cuándo hacer uso de algoritmos más eficientes, como QuickSort, HeapSort y ShellSort, saber como funcionan y cómo se aplican, tanto a mano como en código.
+
+•	¿He alcanzado esos resultados? Documenta la(s) evidencia(s), si corresponde.
+Considero que he alcanzado estos objetivos parcialmente, entiendo como se aplican los algoritmos en clase, pero a veces me cuesta darme cuenta de en qué problema es mas óptimo aplicar que algoritmo.
+•	¿Qué he aprendido? ¿Por qué aprendí?
+Aprendí a como implementar los algoritmos dados en clase, lo aprendí debido a qué creo que ordenación es un tema muy fundamental para las habilidades de todo desarrollador, ya que permite tener más herramientas para resolver problemas de forma más eficiente.
+¿Cómo he aprendido – o cómo no? ¿Sé qué tipo de aprendiz soy?
+En esta unidad siento que aprendí las cosas de manera demasiado visual, para estudiar para el parcial, realicé los algoritmos de QuickSort y HeapSort en papel una y otra vez hasta entender su funcionamiento.
+
