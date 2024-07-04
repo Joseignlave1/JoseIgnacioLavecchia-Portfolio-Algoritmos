@@ -1,1 +1,218 @@
-.
+Problemas de Leetcode Resueltos Unidad 3:
+
+
+21.Merge Two Sorted Lists
+
+You are given the heads of two sorted linked lists list1 and list2.
+
+Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+Return the head of the merged linked list.
+
+
+public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+         ListNode temp__node = new ListNode(0);
+        ListNode current__node = temp__node;
+        while(list1 != null && list2 != null) {
+            if(list1.val < list2.val) {
+                current__node.next = list1;
+                list1 = list1.next;
+            } else {
+                current__node.next = list2;
+                list2 = list2.next;
+            }
+            current__node = current__node.next;
+        }
+
+        if(list1 != null) {
+            current__node.next = list1;
+        }
+        if(list2 != null) {
+            current__node.next = list2;
+        }
+        return temp__node.next;
+    }
+
+
+Explicación:
+
+Se crea un nodo temporal con un valor inicial de 0.
+
+Este nodo sirve como punto de partida para la construcción de la lista enlazada
+
+se crea otro nodo llamado current__node que inicialmente apunta a temp__node
+
+mientras list1 y list2 no sean nulos, comparamos los valores de los nodos actuales de las dos listas.
+
+si el valor del nodo actual de list1 es menor que el de list2 se añade list1 a la lista enlazada y list1 avanza hacia el siguiente nodo
+
+Si el valor del nodo actual de list2 es menor o igual que el de list1, se añade el nodo de list2 a la lista enlazada, y list2 avanza al siguiente nodo
+
+
+En ambos casos, current__node avanza al siguiente nodo en la lista enlazada.
+
+Si al final del bucle list1 aún tiene nodos, se añaden todos esos nodos restantes a la lista enlazada.
+
+Si list2 aún tiene nodos, se añaden todos esos nodos restantes a la lista enlazada.
+
+Se retorna temp__node.next, que apunta al primer nodo de la lista enlazada (ignorando el nodo temporal inicial).
+
+Tiempo de ejecución: O(n + m) n es la longitud de list1 y m es la longitud de list 2
+
+
+
+
+141. Linked List Cycle
+
+Given head, the head of a linked list, determine if the linked list has a cycle in it.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+
+Return true if there is a cycle in the linked list. Otherwise, return false.
+
+
+public boolean hasCycle(ListNode head) {
+        if(head == null || head.next == null) {
+            return false;
+        }
+        ListNode slow = head;
+        ListNode fast = head.next;
+        while(fast != null && fast.next != null) {
+            if(slow == fast) {
+                return true;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return false;
+    }
+
+
+
+Utiliza una técnica conocida como dos punteros, inicializamos un puntero llamado slow en el primer elemento del array y otro puntero llamado fast en el segundo elemento del array, fast se mueve el doble de rápido de slow, si slow y fast son iguales podemos verificar que la lista enlazada tiene un ciclo
+
+Tiempo de ejecución O(n)
+
+
+
+234. Palindrome Linked List
+
+boolean if the linkedlist is palindrome, false if not.
+
+public boolean isPalindrome(ListNode head) {
+        ArrayList<Integer> headValues = new ArrayList<>();
+
+        while(head != null) { //Mientras la LinkedList tenga al menos un elemento.(si tiene 0 es palíndromo pero hay valores para agregar a la lista)
+            headValues.add(head.val); 
+            head = head.next; //Muevo el puntero
+        }
+        int left = 0;
+        int right = headValues.size() -1;
+        while (left <= right) {
+            if(!headValues.get(left).equals(headValues.get(right))) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+Se crea un ArrayList llamado headValues para almacenar los valores de los nodos de la lista enlazada.
+Se recorre la lista enlazada desde el primer nodo (head) hasta el último.
+En cada iteración del bucle, se añade el valor del nodo actual al ArrayList y se mueve el puntero head al siguiente nodo.
+
+
+Se inicializan dos punteros, left y right, que apuntan al inicio y al final del ArrayList, respectivamente.
+Se recorre el ArrayList comparando los valores en las posiciones de los punteros left y right.
+Si en cualquier momento los valores no coinciden (headValues.get(left) != headValues.get(right)), se retorna false, indicando que la lista no es un palíndromo.
+Si los valores coinciden, se incrementa left y se decrementa right para continuar comparando los siguientes elementos hacia el centro del ArrayList.
+El bucle termina cuando left es mayor que right, lo que significa que todos los valores se han comparado y son iguales. En este caso, se retorna true, indicando que la lista es un palíndromo.
+
+Orden de tiempo de ejecución O(n)
+
+26. Remove Duplicates from Sorted Array
+
+Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
+
+Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
+
+Change the array nums such that the first k elements of nums contain the unique elements in the order they were present in nums initially. The remaining elements of nums are not important as well as the size of nums.
+Return k.
+Custom Judge:
+
+The judge will test your solution with the following code:
+
+int[] nums = [...]; // Input array
+int[] expectedNums = [...]; // The expected answer with correct length
+
+int k = removeDuplicates(nums); // Calls your implementation
+
+assert k == expectedNums.length;
+for (int i = 0; i < k; i++) {
+    assert nums[i] == expectedNums[i];
+}
+If all assertions pass, then your solution will be accepted.
+
+ 
+
+Example 1:
+
+Input: nums = [1,1,2]
+Output: 2, nums = [1,2,_]
+Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+Example 2:
+
+Input: nums = [0,0,1,1,1,2,2,3,3,4]
+Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int pointerLeft = 0;
+        int pointerRight = 0;
+        while(pointerRight < nums.length) {
+
+            if(nums[pointerLeft] == nums[pointerRight]) {
+                pointerRight++;
+            } else {
+                pointerLeft++;
+                nums[pointerLeft] = nums[pointerRight];
+                pointerRight++;
+            }
+        }
+        return pointerLeft + 1;
+    }
+}
+
+
+Inicialización de punteros:
+
+pointerLeft y pointerRight se inicializan ambos en 0 al comienzo del array.
+Comparación de elementos adyacentes:
+
+Se entra en un bucle while que se ejecuta mientras pointerRight sea menor que la longitud del array nums.
+Verificación de duplicados:
+
+Se compara el elemento en la posición pointerLeft con el elemento en la posición pointerRight.
+Si son iguales, significa que se ha encontrado un duplicado y se incrementa solo pointerRight para avanzar al siguiente elemento.
+Manejo de elementos no duplicados:
+
+Si los elementos en las posiciones pointerLeft y pointerRight son diferentes:
+Se incrementa pointerLeft para apuntar al próximo espacio disponible para un elemento único.
+Se asigna el valor del elemento en la posición pointerRight al nuevo espacio en pointerLeft en el array nums.
+Se incrementa también pointerRight para avanzar al siguiente elemento.
+Repetición del proceso:
+
+Se repite el proceso de comparación y manejo de duplicados o elementos no duplicados hasta que pointerRight alcance la longitud del array.
+Longitud final del array sin duplicados:
+
+Al final, pointerLeft representa la posición del último elemento único en el array resultante.
+La longitud del array sin duplicados es pointerLeft + 1, ya que pointerLeft es un índice y no una longitud.
+Retorno del resultado:
+
+La función devuelve pointerLeft + 1, que es la longitud del array resultante sin duplicados.
+
+Orden de tiempo de ejecución O(n)
