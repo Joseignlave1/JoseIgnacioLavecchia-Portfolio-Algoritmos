@@ -1,0 +1,129 @@
+Ejercicios Extra unidad 8:
+
+
+
+1971. Find if Path Exists in Graph
+
+
+There is a bi-directional graph with n vertices, where each vertex is labeled from 0 to n - 1 (inclusive). The edges in the graph are represented as a 2D integer array edges, where each edges[i] = [ui, vi] denotes a bi-directional edge between vertex ui and vertex vi. Every vertex pair is connected by at most one edge, and no vertex has an edge to itself.
+
+You want to determine if there is a valid path that exists from vertex source to vertex destination.
+
+Given edges and the integers n, source, and destination, return true if there is a valid path from source to destination, or false otherwise.
+
+
+
+public boolean validPath(int n, int[][] edges, int source, int destination) {
+        vis = new boolean[n];
+        gr = new ArrayList<>(n);
+        for (int i = 0; i < n; i++) {
+            gr.add(new ArrayList<>());
+        }
+
+        for (int[] edge : edges) {
+            int u = edge[0], v = edge[1];
+            gr.get(u).add(v);
+            gr.get(v).add(u);
+        }
+
+        bpf(source);
+        return vis[destination];
+    }
+    boolean[] vis;
+    List<List<Integer>> gr;
+
+    void bpf(int node) {
+        if (vis[node]) return;
+        vis[node] = true;
+
+        for (int child : gr.get(node)) {
+            if (!vis[child])
+                bpf(child);
+        }
+    }
+
+
+Explicación:
+
+
+Determinar si existe un camino válido entre un origen y un destino en un grafo no dirigido bidireccional.
+
+
+vis es un array booleano que rastrea si un nodo ha sido visitado.
+
+gr es una lista de listas que representa el grafo adyacente (lista de adyacencia).
+
+
+Inicializamos gr con listas vacías para cada nodo.
+Iteramos sobre las aristas (edges) y llenamos la lista de adyacencia para cada nodo. Como es un grafo no dirigido, añadimos cada nodo en la lista del otro nodo conectado por la arista.
+
+
+Hacemos bpf y al finalizar verificamos si el nodo destination ha sido visitado (vis[destination]). Si es así, existe un camino válido entre source y destination; de lo contrario, no existe tal camino.
+
+
+
+Tiempo de ejecución: O(V + E) V = número de vértices E = número de áristas
+
+
+
+Numero de componentes conexos:
+
+
+Dado un grafo no dirigido, encontrar el número de componentes conexos:
+
+
+  public int countComponents(int n, int[][] edges) {
+        List<List<Integer>> graph = new ArrayList<>();
+        boolean[] visited = new boolean[n];
+        for (int i = 0; i < n; i++) {
+            graph.add(new ArrayList<>());
+        }
+
+        for (int[] edge : edges) {
+            int u = edge[0], v = edge[1];
+            graph.get(u).add(v);
+            graph.get(v).add(u);
+        }
+
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                bpf(i, graph, visited);
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    private void bpf(int node, List<List<Integer>> graph, boolean[] visited) {
+        if (visited[node]) return;
+        visited[node] = true;
+        for (int neighbor : graph.get(node)) {
+            if (!visited[neighbor]) {
+                bpf(neighbor, graph, visited);
+            }
+        }
+    }
+
+
+
+Explicación:
+
+El algoritmo cuenta el número de componentes conexos en un grafo no dirigido. Una componente conexo es un subgrafo en el que cualquier par de nodos está conectado por un camino, y que no está conectado a ningún otro nodo en el Grafo original.
+
+
+graph es una lista de listas que representa el grafo mediante una lista de adyacencia.
+
+visited es un array booleano que rastrea si un nodo ha sido visitado.
+
+Inicializamos graph con listas vacías para cada nodo.
+
+recorremos cada arista en edges y se añaden los nodos conectados a las listas de adyacencia correspondientes. Dado que el grafo es no dirigido, cada nodo se añade a la lista del otro nodo conectado por la arista.
+
+Recorremos cada nodo, Si un nodo no ha sido visitado, hacemos bpf, empezando desde ese nodo y incrementamos el contador de componentes conexos (count).
+
+
+Tiempo de ejecución: O(V + E) V = vértices  E = Aristas
+
+
