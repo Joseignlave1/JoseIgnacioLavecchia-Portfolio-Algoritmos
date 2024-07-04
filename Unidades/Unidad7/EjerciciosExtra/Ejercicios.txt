@@ -1,0 +1,266 @@
+Ejercicios Extra unidad 7:
+
+
+Verificar si un Grafo Dirigido tiene ciclo:
+
+
+Utilizar BPF para para verificar si un grafo dirigido contiene un ciclo.
+
+
+ public boolean hasCycle(int[][] graph) {
+        int V = graph.length;
+        boolean[] visited = new boolean[V];
+        boolean[] recStack = new boolean[V];
+
+        for (int i = 0; i < V; i++) {
+            if (dfs(i, graph, visited, recStack)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
+    private boolean bpf(int node, int[][] graph, boolean[] visited, boolean[] recStack) {
+        if (recStack[node]) return true;
+        if (visited[node]) return false;
+
+        visited[node] = true;
+        recStack[node] = true;
+
+        for (int i = 0; i < graph[node].length; i++) {
+            if (graph[node][i] != 0 && dfs(i, graph, visited, recStack)) {
+                return true;
+            }
+        }
+
+        recStack[node] = false;
+        return false;
+    }
+
+
+Explicación:
+
+V es el número de nodos en el grafo.
+
+visited es un array booleano que marca los nodos que han sido visitados.
+
+recStack es un array booleano que mantiene un registro de los nodos en la pila de recursión para detectar ciclos.
+
+
+
+Para cada nodo del grafo, si el nodo aún no ha sido visitado, realizamos bpf
+
+si bpf devuelve true, entonces el grafo tiene un ciclo.
+
+Tiempo de ejecución: O(V + E) V = número de vértices, E = número de aristas.
+
+
+
+
+
+Detectar todos los ciclos en un grafo dirigido:
+
+
+ public List<List<Integer>> findAllCycles(int[][] graph) {
+        int V = graph.length;
+        boolean[] visited = new boolean[V];
+        boolean[] recStack = new boolean[V];
+        List<List<Integer>> cycles = new ArrayList<>();
+        Stack<Integer> path = new Stack<>();
+
+        for (int i = 0; i < V; i++) {
+            if (!visited[i]) {
+                dfs(i, graph, visited, recStack, path, cycles);
+            }
+        }
+
+        return cycles;
+    }
+
+    private void bpf(int node, int[][] graph, boolean[] visited, boolean[] recStack, Stack<Integer> path, List<List<Integer>> cycles) {
+        visited[node] = true;
+        recStack[node] = true;
+        path.push(node);
+
+        for (int i = 0; i < graph[node].length; i++) {
+            if (graph[node][i] != 0) {
+                if (recStack[i]) {
+                    cycles.add(new ArrayList<>(path.subList(path.indexOf(i), path.size())));
+                } else if (!visited[i]) {
+                    dfs(i, graph, visited, recStack, path, cycles);
+                }
+            }
+        }
+
+        recStack[node] = false;
+        path.pop();
+    }
+
+Explicación:
+
+V es el número de nodos en el grafo.
+
+visited es un array booleano que marca los nodos que han sido visitados.
+
+recStack es un array booleano que mantiene un registro de los nodos en la pila de recursión para detectar ciclos.
+
+cycles es una lista de listas que almacena todos los ciclos encontrados.
+
+path es una pila que guarda el camino actual en bpf.
+
+bpf para Cada Nodo:
+
+Para cada nodo del grafo, si no ha sido visitado, hacemos bpf llamando al método de forma recursiva.
+Método dfs:
+
+Marcamos el nodo actual como visitado (visited[node] = true) y lo añadimos a la pila de recursión (recStack[node] = true) y al camino actual (path.push(node)).
+
+Se Recorre todos los nodos adyacentes al nodo actual:
+
+Si un nodo adyacente está en la pila de recursión (recStack[i]), se ha encontrado un ciclo y se añade a la lista de ciclos.
+
+Si un nodo adyacente no ha sido visitado, llamamosp recursivamente a bpf para ese nodo.
+
+Después de procesar todos los nodos adyacentes, se remueve el nodo actual de la pila de recursión (recStack[node] = false) y del camino actual (path.pop()).
+
+
+Después de recorrer todos los nodos, la lista cycles contiene todos los ciclos encontrados en el grafo.
+
+
+
+Orden de tiempo de ejecución O(V + E) v = cantidad de vértices E = cantidad de áristas.
+
+
+
+
+
+
+Camino más corto en un grafo dirigido que puede tener aristas con costo negativo:
+
+public int[] bellmanFord(int[][] edges, int V, int start) {
+        int[] dist = new int[V];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[start] = 0;
+
+        for (int i = 0; i < V - 1; i++) {
+            for (int[] edge : edges) {
+                int u = edge[0];
+                int v = edge[1];
+                int weight = edge[2];
+                if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
+                    dist[v] = dist[u] + weight;
+                }
+            }
+        }
+
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            int weight = edge[2];
+            if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
+                throw new IllegalArgumentException("El grafo contiene un ciclo de pesos negativos cycle");
+            }
+        }
+
+        return dist;
+
+Explicación:
+
+Utilizamos el algoritmo de Bellman-Ford para encontrar el camino más corto desde un nodo origen a todos los demás nodos en un grafo 
+
+dirigido, permitiendo que los costos de las aristas sean negativos. También se detectan la presencia de ciclos de costos negativos en el grafo.
+
+dist es un array que almacena la distancia mínima desde el nodo origen (start) a cada nodo. Se inicializa con Integer.MAX_VALUE para todos los nodos excepto el nodo origen, que se inicializa con 0.
+
+El algoritmo realiza V - 1 iteraciones donde V es el número de nodos en el grafo.
+
+En cada iteración, recorre todas las aristas del grafo y actualiza las distancias (dist) si encuentra un camino más corto a través de una arista.
+
+
+Para detectar los ciclos de costos negativos después de las V - 1 iteraciones, realiza una iteración adicional sobre todas las aristas.
+
+Si encuentra que una distancia puede ser reducida aún más, significa que existe un ciclo de costos negativos en el grafo, por lo que lanzamos una excepción.
+
+
+
+Tiempo de ejecución O(V * E) V = número de áristas E = número de vértices.
+
+
+
+Verificar si un grafo dirigido es Bipartito:
+
+
+ public boolean isBipartite(int[][] graph) {
+        int V = graph.length;
+        int[] color = new int[V];
+        Arrays.fill(color, -1);
+
+        for (int i = 0; i < V; i++) {
+            if (color[i] == -1) {
+                if (!bfsCheck(graph, i, color)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private boolean beaCheck(int[][] graph, int start, int[] color) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(start);
+        color[start] = 0;
+
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+
+            for (int i = 0; i < graph[node].length; i++) {
+                if (graph[node][i] != 0) {
+                    if (color[i] == -1) {
+                        color[i] = 1 - color[node];
+                        queue.add(i);
+                    } else if (color[i] == color[node]) {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+
+Explicación:
+
+
+Se verifica si un grafo dirigido es bipartito utilizando BEA. Un grafo es bipartito si se puede colorear con dos colores de tal manera que no haya dos nodos adyacentes con el mismo color.
+
+Inicialización:
+
+V es el número de nodos en el grafo.
+
+color es un array de enteros que se usa para almacenar los colores de los nodos. Inicialmente, todos los nodos están sin color (-1).
+
+Se recorren todos los nodos del grafo.
+Si un nodo no ha sido coloreado (color[i] == -1), se llama al método beaCheck para verificar si el componente conectado es bipartito.
+
+Método beaCheck:
+
+Se realiza una búsqueda en amplitud empezando por el nodo inicial.
+
+Usa una cola (Queue) para gestionar los nodos en BEA.
+
+Asigna el color 0 al nodo de inicio.
+
+Mientras la cola no esté vacía:
+
+Extrae un nodo de la cola.
+
+Recorre todos los nodos adyacentes.
+
+Si un nodo adyacente no ha sido coloreado (color[i] == -1), le asignamos el color opuesto al nodo actual (1 - color[node]) y se añade a la cola.
+
+Si un nodo adyacente ya ha sido coloreado con el mismo color que el nodo actual, el grafo no es bipartito y se retorna false.
