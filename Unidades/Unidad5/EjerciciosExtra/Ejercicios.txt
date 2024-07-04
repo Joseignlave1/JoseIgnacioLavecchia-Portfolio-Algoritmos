@@ -1,0 +1,147 @@
+Problemas de Leetcode Resueltos Unidad 5:
+
+386. Lexicographical Numbers
+
+Given an integer n, return all the numbers in the range [1, n] sorted in lexicographical order.
+
+
+class Trie{
+    Trie [] child = new Trie[10];
+    boolean isEnd = false;
+}
+class Solution {
+    Trie root = new Trie();
+    List<Integer> list = new ArrayList<Integer>();
+
+    void lexsort(Trie r,int ans){
+        for(int i=0;i<10;i++){
+            if(r.child[i] != null) {
+                ans = ans*10+i;
+                if(r.child[i].isEnd) list.add(ans);
+                lexsort(r.child[i],ans);
+                ans /=10;
+            }
+        }
+    }
+
+    void add(String word,int index,Trie r){
+        if(index == word.length()){
+            r.isEnd = true;
+            return;
+        }
+        char ch = word.charAt(index);
+        if(r.child[ch-'0'] == null){
+            Trie temp = new Trie();
+            r.child[ch-'0'] = temp;
+        }
+        add(word,index+1,r.child[ch-'0']);
+    }
+    public List<Integer> lexicalOrder(int n) {
+        for(int i=1;i<=n;i++)
+             add(""+i,0,root);
+        lexsort(root,0);
+        return list;
+    }
+}
+
+Explicación:
+
+Tenemos que ordenar números del 1 al n en orden lexicográfico
+
+
+Para esto construímos un trie para almacenar a los números como cadenas de caracteres.
+
+Cada nodo tiene 10 hijos (para dígitos 0-9) y un indicador isEnd para marcar el final de un número.
+
+Con el método lexsort
+
+hacemos BPF para generar los números en orden lexicográfico y los añadimos a la lista list. 
+
+
+En el método lexicalOrder
+
+Insertamos los números del 1 al n en el Trie.
+
+Llamamos a lexsort para ordenar y obtener los números en orden lexicográfico.
+
+
+Tiempo de ejecución O(n log n)
+
+
+
+14. Longest Common Prefix
+
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        Trie trie = new Trie();
+        for (String s : strs) {
+            trie.add(s);
+        }
+        int idx = -1;
+        char[] cs = strs[0].toCharArray();
+        int n = strs.length;
+        for (int i = 0; i < cs.length; i++) {
+            if (trie.ts[cs[i]-'a'] != null && trie.ts[cs[i]-'a'].cnt == n) {
+                idx = i;
+                trie = trie.ts[cs[i]-'a'];
+            } else {
+                break;
+            }
+        }
+        
+        return idx == -1 ? "" : strs[0].substring(0,idx+1);
+        
+    }
+    
+    class Trie {
+        Trie[] ts;
+        int cnt ;
+        Trie() {
+            ts = new Trie[26];
+            cnt = 1;
+        }
+        
+        public void add(String s) {
+            char[] cs = s.toCharArray();
+            Trie t = this;
+            for (int i = 0; i < cs.length; i++) {
+                if (t.ts[cs[i]-'a'] == null) {
+                    t.ts[cs[i]-'a'] = new Trie();
+                } else {
+                    t.ts[cs[i]-'a'].cnt++;
+                }
+                t = t.ts[cs[i]-'a'];
+            }
+        }
+    }
+}
+
+Explicación: 
+
+Se pide encontrar el prefijo común más largo entre un conjunto de cadenas. Si no hay un prefijo común, debe devolver una cadena vacía
+
+Creamos un trie de tamaño 26(letras del alfabeto) y un contador cnt para contar cuántas veces se ha insertado un nodo
+
+insertamos los strings en el trie, incrementando el contador para cada carácter.
+
+
+
+Método longestCommon prefix:
+
+Recorremos el primer string (strs[0]) carácter por carácter.
+
+Para cada carácter, verificamos si existe en el Trie y si su contador es igual al número total de cadenas (n).
+
+Si ambas condiciones son verdaderas, avanzamos al siguiente nodo del Trie; de lo contrario, se detiene la búsqueda.
+
+
+Si se encuentra un prefijo común, se retorna la subcadena correspondiente del primer string.
+
+Si no se encuentra ningún prefijo común, se retorna una cadena vacía.
+
+
+Tiempo de ejecución: O(n * l)  n es el número de cadenas y l es el promedio de las cadenas en el array strs
